@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0473380C240B618500162958 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473380B240B618500162958 /* CustomView.swift */; };
+		048BD3892410243600F894EE /* ValidField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048BD3882410243600F894EE /* ValidField.swift */; };
 		0C02D8BC2403DC270052AD21 /* LoginPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02D8BB2403DC270052AD21 /* LoginPageVC.swift */; };
 		0C02D8C02403E9DC0052AD21 /* NameTextfieldXIb.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C02D8BE2403E9DC0052AD21 /* NameTextfieldXIb.xib */; };
 		0C02D8C12403E9DC0052AD21 /* NameTextfieldXIb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C02D8BF2403E9DC0052AD21 /* NameTextfieldXIb.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0473380B240B618500162958 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		048BD3882410243600F894EE /* ValidField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidField.swift; sourceTree = "<group>"; };
 		0C02D8BB2403DC270052AD21 /* LoginPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageVC.swift; sourceTree = "<group>"; };
 		0C02D8BE2403E9DC0052AD21 /* NameTextfieldXIb.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NameTextfieldXIb.xib; sourceTree = "<group>"; };
 		0C02D8BF2403E9DC0052AD21 /* NameTextfieldXIb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextfieldXIb.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				0473380B240B618500162958 /* CustomView.swift */,
+				048BD3882410243600F894EE /* ValidField.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0C02D8DF24040B940052AD21 /* CountryPickerCell.swift in Sources */,
 				0C4DAA6623FD1CF6000B1571 /* AddEmployyeVC.swift in Sources */,
 				0C02D8C72403EA130052AD21 /* PhoneNoXib.swift in Sources */,
+				048BD3892410243600F894EE /* ValidField.swift in Sources */,
 				0C02D8C12403E9DC0052AD21 /* NameTextfieldXIb.swift in Sources */,
 				0C87C4ED23FD0F6800B414BE /* ListDetailsVC.swift in Sources */,
 				0C02D8DB240409730052AD21 /* CountryData.swift in Sources */,

@@ -22,7 +22,7 @@ class NameTextfieldXIb: UITableViewCell ,UITextFieldDelegate{
     let departmentPicker = UIPickerView()
     var employeeInfo = [String:Any]()
     var propertyName = String()
-    
+    let loginVc = LoginPageVC()
     var textDelegate: SendTextFieldText?
     
     override func awakeFromNib() {
@@ -35,6 +35,24 @@ class NameTextfieldXIb: UITableViewCell ,UITextFieldDelegate{
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func textDidEndAction(_ sender: UITextField) {
+        if sender.tag == 5{
+            let email = sender.text
+            if !email!.isValidEmail{
+                let alert = UIAlertController(title: "Email is not valid", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+
+            }
+        }else if sender.tag == 1{
+            let name = sender.text
+            print(name)
+        }
+        
+    }
+    
+    
     func openPickerView(){
         if nameTextField.tag == 2{
         nameTextField.rightView = UIImageView(image: #imageLiteral(resourceName: "icDrop"))

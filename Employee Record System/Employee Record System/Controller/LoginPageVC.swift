@@ -73,6 +73,7 @@ extension LoginPageVC:UITableViewDelegate,UITableViewDataSource{
             return cell
         case .name:
             let nameView = tableView.dequeueReusableCell(withIdentifier: "NameTextfieldXIb") as! NameTextfieldXIb
+            nameView.nameTextField.tag = 1
             nameView.textDelegate = self
             nameView.propertyName = "name"
             return nameView

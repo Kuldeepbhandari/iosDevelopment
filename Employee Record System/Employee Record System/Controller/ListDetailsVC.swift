@@ -153,31 +153,13 @@ extension ListDetailsVC:UITableViewDataSource,UITableViewDelegate{
 
 //MARK:Confirm Protocol extension
 //}
-//     func sendDetailsToNextVC(){
-//        let showEmployeeObj = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShowEmployeeInfo") as! ShowEmployeeInfo
-////        let address = departmentArr.map({$0.address})
-////        showEmployeeObj.address = address.first
-//        let department = departmentArr.map({$0.department})
-//        showEmployeeObj.department = department.first.map { $0.rawValue }
-//        let dob = departmentArr.map({$0.dob})
-//        showEmployeeObj.dob = dob.first
-//        let email = departmentArr.map({$0.email})
-//        showEmployeeObj.email = email.first
-//        let employeeId = departmentArr.map({$0.employeeID})
-//        showEmployeeObj.empId = employeeId.first
-//        let gender = departmentArr.map({$0.gender})
-//        showEmployeeObj.gender = gender.first.map { $0.rawValue }
-//        let name = departmentArr.map({$0.name})
-//        showEmployeeObj.name = name.first
-//        self.navigationController?.pushViewController(showEmployeeObj, animated: true)
-//    }
-//}
 
 extension ListDetailsVC:SaveDataOnTappedRegisterProtocol{
     func sendDetails(dict: [String : Any]) {
        let employeeInfo = EmployeeInformation(dict: dict)
         employeeInfoArr.append(employeeInfo)
         tableView.reloadData()
+
     }
 }
 

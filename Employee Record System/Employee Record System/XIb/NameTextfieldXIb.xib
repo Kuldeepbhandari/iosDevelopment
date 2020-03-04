@@ -20,6 +20,9 @@
                         <rect key="frame" x="20" y="10" width="294" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                        <connections>
+                            <action selector="textDidEndAction:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="RSe-fk-C8Q"/>
+                        </connections>
                     </textField>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x63-sN-B7T">
                         <rect key="frame" x="20" y="43" width="294" height="1"/>
