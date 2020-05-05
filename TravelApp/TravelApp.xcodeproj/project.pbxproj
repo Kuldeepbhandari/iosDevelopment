@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		041437D62408AD57009E77A6 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041437D52408AD57009E77A6 /* TextField+Extension.swift */; };
 		041437D92408AE0E009E77A6 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041437D82408AE0E009E77A6 /* UIImage+Extension.swift */; };
+		04A89A5A241486AD00C9C783 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89A59241486AD00C9C783 /* LoginVC.swift */; };
+		04A89A5C2414A37800C9C783 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89A5B2414A37800C9C783 /* TabBarVC.swift */; };
+		04A89A5E2414A57A00C9C783 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89A5D2414A57A00C9C783 /* ViewController+Extension.swift */; };
 		04A8E813240826B4006A3648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E812240826B4006A3648 /* AppDelegate.swift */; };
 		04A8E815240826B4006A3648 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E814240826B4006A3648 /* SceneDelegate.swift */; };
 		04A8E817240826B4006A3648 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A8E816240826B4006A3648 /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		041437D52408AD57009E77A6 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		041437D82408AE0E009E77A6 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		04A89A59241486AD00C9C783 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		04A89A5B2414A37800C9C783 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		04A89A5D2414A57A00C9C783 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		04A8E80F240826B4006A3648 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A8E812240826B4006A3648 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A8E814240826B4006A3648 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,8 @@
 			children = (
 				04A8E816240826B4006A3648 /* ViewController.swift */,
 				04A8E82F24083538006A3648 /* SignUpVC.swift */,
+				04A89A59241486AD00C9C783 /* LoginVC.swift */,
+				04A89A5B2414A37800C9C783 /* TabBarVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				04A8E82A24082A9E006A3648 /* CustomButton.swift */,
 				041437D52408AD57009E77A6 /* TextField+Extension.swift */,
 				041437D82408AE0E009E77A6 /* UIImage+Extension.swift */,
+				04A89A5D2414A57A00C9C783 /* ViewController+Extension.swift */,
 			);
 			path = "Extension+Button";
 			sourceTree = "<group>";
@@ -192,9 +201,12 @@
 				04A8E817240826B4006A3648 /* ViewController.swift in Sources */,
 				04A8E82E24083159006A3648 /* UiButton+Design.swift in Sources */,
 				041437D92408AE0E009E77A6 /* UIImage+Extension.swift in Sources */,
+				04A89A5A241486AD00C9C783 /* LoginVC.swift in Sources */,
 				04A8E83224083FAB006A3648 /* CustomView.swift in Sources */,
 				04A8E813240826B4006A3648 /* AppDelegate.swift in Sources */,
 				041437D62408AD57009E77A6 /* TextField+Extension.swift in Sources */,
+				04A89A5E2414A57A00C9C783 /* ViewController+Extension.swift in Sources */,
+				04A89A5C2414A37800C9C783 /* TabBarVC.swift in Sources */,
 				04A8E83024083538006A3648 /* SignUpVC.swift in Sources */,
 				04A8E815240826B4006A3648 /* SceneDelegate.swift in Sources */,
 			);

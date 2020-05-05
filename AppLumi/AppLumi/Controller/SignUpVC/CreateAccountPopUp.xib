@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Galano Classic Alt W00 SemiBold.ttf">
+            <string>GalanoClassicAltW00-SemiBd</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateAccountPopUp" customModule="AppLumi" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Pp-rh-EtO" customClass="CustomView" customModule="AppLumi" customModuleProvider="target">
+                    <rect key="frame" x="52" y="278" width="310" height="340"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icFillTypeIllustration" translatesAutoresizingMaskIntoConstraints="NO" id="2TT-mG-P9j">
+                            <rect key="frame" x="36" y="36" width="238" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="wzX-os-U3k"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Care to speed this up?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDl-b5-Obz">
+                            <rect key="frame" x="68.5" y="113" width="173" height="20"/>
+                            <fontDescription key="fontDescription" name="GalanoClassicAltW00-SemiBd" family="GalanoClassicAltW00-SemiBd" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ej-b4-U1X">
+                            <rect key="frame" x="57" y="143.5" width="196" height="30.5"/>
+                            <string key="text">Pre-fill name, age, hometown andphotos form Facebook.</string>
+                            <fontDescription key="fontDescription" name="GalanoClassicAltW00-SemiBd" family="GalanoClassicAltW00-SemiBd" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WbT-br-TlB">
+                            <rect key="frame" x="42.5" y="205" width="225" height="105"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxJ-Y3-q8v">
+                                    <rect key="frame" x="0.0" y="0.0" width="225" height="45"/>
+                                    <color key="backgroundColor" red="1" green="0.1333333333" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="GalanoClassicAltW00-SemiBd" family="GalanoClassicAltW00-SemiBd" pointSize="13"/>
+                                    <state key="normal" title="Manual Fill">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="22.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="1" green="0.1333333333" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="manualFill:" destination="-1" eventType="touchUpInside" id="ghx-Tt-4nT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omf-6q-sKQ">
+                                    <rect key="frame" x="0.0" y="60" width="225" height="45"/>
+                                    <color key="backgroundColor" red="0.22745098039215686" green="0.33333333333333331" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="GalanoClassicAltW00-SemiBd" family="GalanoClassicAltW00-SemiBd" pointSize="13"/>
+                                    <state key="normal" title="Facebook Pre-fill">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="22.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" red="0.2274509804" green="0.33333333329999998" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tappedOnFacebookPrefill:" destination="-1" eventType="touchUpInside" id="vw5-lH-cY6"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="105" id="o3L-zn-rN4"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="2TT-mG-P9j" firstAttribute="leading" secondItem="7Pp-rh-EtO" secondAttribute="leading" constant="36" id="28z-JG-KQl"/>
+                        <constraint firstAttribute="trailing" secondItem="WbT-br-TlB" secondAttribute="trailing" constant="42.5" id="2aX-dB-P0Q"/>
+                        <constraint firstItem="WbT-br-TlB" firstAttribute="leading" secondItem="7Pp-rh-EtO" secondAttribute="leading" constant="42.5" id="3eb-U7-Inm"/>
+                        <constraint firstItem="2TT-mG-P9j" firstAttribute="top" secondItem="7Pp-rh-EtO" secondAttribute="top" constant="36" id="DoO-hc-5oR"/>
+                        <constraint firstItem="XDl-b5-Obz" firstAttribute="centerX" secondItem="7Pp-rh-EtO" secondAttribute="centerX" id="EXq-Lu-gmj"/>
+                        <constraint firstItem="WbT-br-TlB" firstAttribute="top" secondItem="5ej-b4-U1X" secondAttribute="bottom" constant="31" id="KN1-Rn-7cs"/>
+                        <constraint firstAttribute="height" constant="340" id="LTc-bD-hBA"/>
+                        <constraint firstItem="5ej-b4-U1X" firstAttribute="centerX" secondItem="7Pp-rh-EtO" secondAttribute="centerX" id="RFZ-rU-NhG"/>
+                        <constraint firstAttribute="width" constant="310" id="gmG-Hc-LL9"/>
+                        <constraint firstItem="5ej-b4-U1X" firstAttribute="top" secondItem="XDl-b5-Obz" secondAttribute="bottom" constant="10.5" id="ktk-ni-2Yv"/>
+                        <constraint firstItem="XDl-b5-Obz" firstAttribute="top" secondItem="2TT-mG-P9j" secondAttribute="bottom" constant="27" id="q6t-Lf-iVV"/>
+                        <constraint firstAttribute="trailing" secondItem="2TT-mG-P9j" secondAttribute="trailing" constant="36" id="y3Y-tp-1s6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.78071489726027399" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="7Pp-rh-EtO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="aZR-I0-jcH"/>
+                <constraint firstItem="7Pp-rh-EtO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bgC-ma-MYe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icFillTypeIllustration" width="238" height="49"/>
+    </resources>
+</document>

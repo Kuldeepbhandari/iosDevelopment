@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Galano Classic W00 Bold.ttf">
+            <string>GalanoClassicW00-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetTitle" customModule="AppLumi" customModuleProvider="target">
+            <connections>
+                <outlet property="backBtn" destination="Z6D-GO-IPP" id="KVe-eJ-wWN"/>
+                <outlet property="containerView" destination="iN0-l3-epB" id="qOM-Lx-92t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="496" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6D-GO-IPP">
+                    <rect key="frame" x="0.0" y="0.0" width="12" height="22"/>
+                    <state key="normal" image="icBack"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Your Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-az-fFa">
+                    <rect key="frame" x="166" y="0.0" width="164.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="GalanoClassicW00-Bold" family="GalanoClassicW00-Bold" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Z6D-GO-IPP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="5Xi-HI-Uc1"/>
+                <constraint firstItem="aQH-az-fFa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="B8g-5k-aRL"/>
+                <constraint firstItem="aQH-az-fFa" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CfA-ae-VOb"/>
+                <constraint firstItem="Z6D-GO-IPP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pbd-HD-BBU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="200.00000000000003" y="-156.36160714285714"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icBack" width="11.5" height="20"/>
+    </resources>
+</document>

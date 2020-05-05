@@ -16,15 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         btnSignIn.designButton()
+        
         travelImage.layer.cornerRadius = travelImage.frame.width/2
         travelImage.clipsToBounds = true
+        
     }
 
 
     @IBAction func tappedOnSignUp(_ sender: UIButton) {
+        
     }
     
     @IBAction func onTappedSignIn(_ sender: UIButton) {
+        
     }
     
 }

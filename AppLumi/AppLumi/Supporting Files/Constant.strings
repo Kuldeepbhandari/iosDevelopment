@@ -1,0 +1,12 @@
+/* 
+  Constant.strings
+  AppLumi
+
+  Created by appinventiv on 26/03/20.
+  Copyright © 2020 appinventiv. All rights reserved.
+*/
+//WelcomeVC Constant
+realConnection = "Real connections happen face to face in real life";
+fbLabel = "Continue with Facebook";
+instaLbl = "Continue with Instagram";
+phoneLbl = "Continue with Phone Number";

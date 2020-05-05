@@ -1,0 +1,6 @@
+framework module Pods_AppLumi {
+  umbrella header "Pods-AppLumi-umbrella.h"
+
+  export *
+  module * { export * }
+}
