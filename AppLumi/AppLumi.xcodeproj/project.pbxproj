@@ -7,17 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040B2EEB246E6B6100CE7DA3 /* EventMatesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B2EE9246E6B6100CE7DA3 /* EventMatesCell.swift */; };
+		040B2EEC246E6B6100CE7DA3 /* EventMatesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 040B2EEA246E6B6100CE7DA3 /* EventMatesCell.xib */; };
+		040B2EEE246E6F9600CE7DA3 /* EventMatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040B2EED246E6F9600CE7DA3 /* EventMatesVC.swift */; };
 		042E42D1245C77EC00BE3B49 /* ChangeHeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E42D0245C77EC00BE3B49 /* ChangeHeightVC.swift */; };
 		042E42D3245C789B00BE3B49 /* ChangeFeetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E42D2245C789B00BE3B49 /* ChangeFeetCell.swift */; };
 		042E42D5245C78B700BE3B49 /* ChangeInchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042E42D4245C78B700BE3B49 /* ChangeInchCell.swift */; };
+		04348C392462E60C006F155D /* SavedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04348C382462E60C006F155D /* SavedCard.swift */; };
+		045012DD246BC04C0048953D /* SenderTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045012DB246BC04C0048953D /* SenderTableCell.swift */; };
+		045012DE246BC04C0048953D /* SenderTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045012DC246BC04C0048953D /* SenderTableCell.xib */; };
+		045012E1246BC0930048953D /* ReciverTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045012DF246BC0930048953D /* ReciverTableCell.swift */; };
+		045012E2246BC0930048953D /* ReciverTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045012E0246BC0930048953D /* ReciverTableCell.xib */; };
+		045012E4246C14D60048953D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045012E3246C14D60048953D /* Message.swift */; };
 		0489ECE4246117EE008242C4 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489ECE3246117EE008242C4 /* SettingVC.swift */; };
+		049178AD2462B1F100650A7E /* GetSavedCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049178AC2462B1F100650A7E /* GetSavedCardsVC.swift */; };
 		049BACD6245D5B1B00A7515C /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BACD5245D5B1B00A7515C /* UserProfileCell.swift */; };
 		049BACD9245D5C3000A7515C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BACD8245D5C3000A7515C /* UserProfileVC.swift */; };
+		04B124B3246413D400597B18 /* SavedCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B124B2246413D300597B18 /* SavedCardTableCell.swift */; };
+		04B124B52464174C00597B18 /* PaymentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B124B42464174B00597B18 /* PaymentVC.swift */; };
 		04B7DD8F245FE810006217D2 /* AddProfilePhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7DD8E245FE810006217D2 /* AddProfilePhotoVC.swift */; };
 		04B7DD91245FF1A6006217D2 /* AddProfileButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7DD90245FF1A6006217D2 /* AddProfileButtonCell.swift */; };
 		04B7DD94245FF517006217D2 /* AddProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7DD92245FF517006217D2 /* AddProfileImageCell.swift */; };
 		04B7DD95245FF517006217D2 /* AddProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B7DD93245FF517006217D2 /* AddProfileImageCell.xib */; };
 		04B7DD97246035DD006217D2 /* SettingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B7DD96246035DD006217D2 /* SettingData.swift */; };
+		04DA0D88246AC55700276431 /* EventBookingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA0D87246AC55700276431 /* EventBookingVC.swift */; };
+		04DA0D8A246ACA3000276431 /* EventBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA0D89246ACA3000276431 /* EventBooking.swift */; };
+		04DA1A41246AA4A400099486 /* BookingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA1A40246AA4A400099486 /* BookingCell.swift */; };
 		0C0FA4FD243760F80005EFC1 /* FeetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FA4FC243760F80005EFC1 /* FeetCell.swift */; };
 		0C0FA4FF2437610B0005EFC1 /* InchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FA4FE2437610B0005EFC1 /* InchCell.swift */; };
 		0C0FA503243762B40005EFC1 /* SelectHeightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0FA502243762B40005EFC1 /* SelectHeightVC.swift */; };
@@ -105,17 +120,32 @@
 
 /* Begin PBXFileReference section */
 		01EA307A47A2E0C048D836C6 /* Pods-AppLumi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppLumi.release.xcconfig"; path = "Target Support Files/Pods-AppLumi/Pods-AppLumi.release.xcconfig"; sourceTree = "<group>"; };
+		040B2EE9246E6B6100CE7DA3 /* EventMatesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMatesCell.swift; sourceTree = "<group>"; };
+		040B2EEA246E6B6100CE7DA3 /* EventMatesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventMatesCell.xib; sourceTree = "<group>"; };
+		040B2EED246E6F9600CE7DA3 /* EventMatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMatesVC.swift; sourceTree = "<group>"; };
 		042E42D0245C77EC00BE3B49 /* ChangeHeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeHeightVC.swift; sourceTree = "<group>"; };
 		042E42D2245C789B00BE3B49 /* ChangeFeetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeFeetCell.swift; sourceTree = "<group>"; };
 		042E42D4245C78B700BE3B49 /* ChangeInchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeInchCell.swift; sourceTree = "<group>"; };
+		04348C382462E60C006F155D /* SavedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCard.swift; sourceTree = "<group>"; };
+		045012DB246BC04C0048953D /* SenderTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderTableCell.swift; sourceTree = "<group>"; };
+		045012DC246BC04C0048953D /* SenderTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SenderTableCell.xib; sourceTree = "<group>"; };
+		045012DF246BC0930048953D /* ReciverTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciverTableCell.swift; sourceTree = "<group>"; };
+		045012E0246BC0930048953D /* ReciverTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReciverTableCell.xib; sourceTree = "<group>"; };
+		045012E3246C14D60048953D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0489ECE3246117EE008242C4 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		049178AC2462B1F100650A7E /* GetSavedCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSavedCardsVC.swift; sourceTree = "<group>"; };
 		049BACD5245D5B1B00A7515C /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		049BACD8245D5C3000A7515C /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
+		04B124B2246413D300597B18 /* SavedCardTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedCardTableCell.swift; sourceTree = "<group>"; };
+		04B124B42464174B00597B18 /* PaymentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentVC.swift; sourceTree = "<group>"; };
 		04B7DD8E245FE810006217D2 /* AddProfilePhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfilePhotoVC.swift; sourceTree = "<group>"; };
 		04B7DD90245FF1A6006217D2 /* AddProfileButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileButtonCell.swift; sourceTree = "<group>"; };
 		04B7DD92245FF517006217D2 /* AddProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfileImageCell.swift; sourceTree = "<group>"; };
 		04B7DD93245FF517006217D2 /* AddProfileImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddProfileImageCell.xib; sourceTree = "<group>"; };
 		04B7DD96246035DD006217D2 /* SettingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingData.swift; sourceTree = "<group>"; };
+		04DA0D87246AC55700276431 /* EventBookingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBookingVC.swift; sourceTree = "<group>"; };
+		04DA0D89246ACA3000276431 /* EventBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBooking.swift; sourceTree = "<group>"; };
+		04DA1A40246AA4A400099486 /* BookingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCell.swift; sourceTree = "<group>"; };
 		0C0FA4FC243760F80005EFC1 /* FeetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeetCell.swift; sourceTree = "<group>"; };
 		0C0FA4FE2437610B0005EFC1 /* InchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InchCell.swift; sourceTree = "<group>"; };
 		0C0FA502243762B40005EFC1 /* SelectHeightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHeightVC.swift; sourceTree = "<group>"; };
@@ -216,6 +246,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040B2EE8246E6B4200CE7DA3 /* EventMates */ = {
+			isa = PBXGroup;
+			children = (
+				040B2EE9246E6B6100CE7DA3 /* EventMatesCell.swift */,
+				040B2EEA246E6B6100CE7DA3 /* EventMatesCell.xib */,
+			);
+			path = EventMates;
+			sourceTree = "<group>";
+		};
+		045012DA246BC02A0048953D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				045012DB246BC04C0048953D /* SenderTableCell.swift */,
+				045012DC246BC04C0048953D /* SenderTableCell.xib */,
+				045012DF246BC0930048953D /* ReciverTableCell.swift */,
+				045012E0246BC0930048953D /* ReciverTableCell.xib */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		049BACD7245D5C0F00A7515C /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +347,8 @@
 		0C3C89EA2433949800EE8DC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				040B2EE8246E6B4200CE7DA3 /* EventMates */,
+				045012DA246BC02A0048953D /* Chat */,
 				0C3C89EB243394CB00EE8DC2 /* ProfileSetupCell.swift */,
 				0C0FA4FC243760F80005EFC1 /* FeetCell.swift */,
 				0C0FA4FE2437610B0005EFC1 /* InchCell.swift */,
@@ -310,7 +362,9 @@
 				049BACD5245D5B1B00A7515C /* UserProfileCell.swift */,
 				04B7DD90245FF1A6006217D2 /* AddProfileButtonCell.swift */,
 				04B7DD92245FF517006217D2 /* AddProfileImageCell.swift */,
+				04B124B2246413D300597B18 /* SavedCardTableCell.swift */,
 				04B7DD93245FF517006217D2 /* AddProfileImageCell.xib */,
+				04DA1A40246AA4A400099486 /* BookingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,6 +442,9 @@
 				0C6BEAAB24407E560060D7E0 /* GetQuestions.swift */,
 				0C4596DB2459F5E70071E1D4 /* EventDetail.swift */,
 				04B7DD96246035DD006217D2 /* SettingData.swift */,
+				04348C382462E60C006F155D /* SavedCard.swift */,
+				04DA0D89246ACA3000276431 /* EventBooking.swift */,
+				045012E3246C14D60048953D /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -459,6 +516,8 @@
 			children = (
 				0C5942DE244F13F500EE91D0 /* MenuVC.swift */,
 				0C5942E0244F49F300EE91D0 /* SaveCardInfoVC.swift */,
+				049178AC2462B1F100650A7E /* GetSavedCardsVC.swift */,
+				04B124B42464174B00597B18 /* PaymentVC.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -471,6 +530,8 @@
 				0C103E26245405B500BB2DA6 /* BookingDetailVC.swift */,
 				0C103E282454439F00BB2DA6 /* CancelBookingVC.swift */,
 				0C4F3DB82457E8E800EF9E67 /* EventDetailsVC.swift */,
+				04DA0D87246AC55700276431 /* EventBookingVC.swift */,
+				040B2EED246E6F9600CE7DA3 /* EventMatesVC.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -567,16 +628,19 @@
 				0C3AB24E2425DB4000F64AE4 /* OnlineWebFonts_COM_4bb5182bca4177c1cf4c658f4263af4c in Resources */,
 				0C434803242477C200054450 /* LaunchScreen.storyboard in Resources */,
 				0C79DA04242C91CD00DA016C /* Constant.strings in Resources */,
+				040B2EEC246E6B6100CE7DA3 /* EventMatesCell.xib in Resources */,
 				0C434800242477C200054450 /* Assets.xcassets in Resources */,
 				0C37EB06242B367A001DEABE /* SetTitle.xib in Resources */,
 				0C43481A2424997400054450 /* OnlineWebFonts_COM_ef04fa5459177741c8e9ff985bad98e1 in Resources */,
 				0C3AB2522425E99900F64AE4 /* OnlineWebFonts_COM_1cd36227270fda45707a6c9e950044fb in Resources */,
 				0C4FB6372428F20200BE843E /* InformationView.xib in Resources */,
+				045012E2246BC0930048953D /* ReciverTableCell.xib in Resources */,
 				0CD6D1B92429D2B40018F154 /* SetUpAlcoholView.xib in Resources */,
 				0CD6D1BD2429DA9D0018F154 /* EducationView.xib in Resources */,
 				04B7DD95245FF517006217D2 /* AddProfileImageCell.xib in Resources */,
 				0C4347FE242477C000054450 /* Main.storyboard in Resources */,
 				0C4C6C47242A4ACB001F52CA /* open-sans in Resources */,
+				045012DE246BC04C0048953D /* SenderTableCell.xib in Resources */,
 				0C474F6624386E5A006B9BD1 /* CreateAccountPopUp.xib in Resources */,
 				0C43481424247F4800054450 /* OnlineWebFonts_COM_67f09a161ef4a0321e72010cff6c792f in Resources */,
 			);
@@ -638,6 +702,7 @@
 				0CE86A11243B689900A89FA7 /* UIViewControllerExt.swift in Sources */,
 				0C0FA4FF2437610B0005EFC1 /* InchCell.swift in Sources */,
 				0C86754F2424F071009634DD /* ProfileSetUpDrugs.swift in Sources */,
+				045012DD246BC04C0048953D /* SenderTableCell.swift in Sources */,
 				04B7DD91245FF1A6006217D2 /* AddProfileButtonCell.swift in Sources */,
 				0C37EB0A242B5095001DEABE /* BorderView.swift in Sources */,
 				0C38903B2434565F00116B5F /* RoundImage.swift in Sources */,
@@ -651,6 +716,8 @@
 				049BACD6245D5B1B00A7515C /* UserProfileCell.swift in Sources */,
 				0CE86A13243B6AB600A89FA7 /* RegisterUser.swift in Sources */,
 				0C3C89E92433947800EE8DC2 /* ProfileSetupOverview.swift in Sources */,
+				04B124B3246413D400597B18 /* SavedCardTableCell.swift in Sources */,
+				04B124B52464174C00597B18 /* PaymentVC.swift in Sources */,
 				0C103E27245405B500BB2DA6 /* BookingDetailVC.swift in Sources */,
 				0C16976C245995A10036107D /* BioVC.swift in Sources */,
 				0C4F3DB92457E8E800EF9E67 /* EventDetailsVC.swift in Sources */,
@@ -666,6 +733,8 @@
 				0C4596DC2459F5E70071E1D4 /* EventDetail.swift in Sources */,
 				0C3D0B1A24455BA000F8A487 /* ToggleButton.swift in Sources */,
 				0C434811242478C400054450 /* SelectAgeVC.swift in Sources */,
+				049178AD2462B1F100650A7E /* GetSavedCardsVC.swift in Sources */,
+				04DA0D8A246ACA3000276431 /* EventBooking.swift in Sources */,
 				0CE176582424FAEC00395715 /* ProfileSetupGender.swift in Sources */,
 				0C16976A2459958E0036107D /* MarijunaVC.swift in Sources */,
 				04B7DD8F245FE810006217D2 /* AddProfilePhotoVC.swift in Sources */,
@@ -676,6 +745,8 @@
 				0C3A6A1F2456B97800E99E63 /* ChatVC.swift in Sources */,
 				0C3AB2542425F7C800F64AE4 /* CountryData.swift in Sources */,
 				0C4347F9242477C000054450 /* SceneDelegate.swift in Sources */,
+				045012E1246BC0930048953D /* ReciverTableCell.swift in Sources */,
+				04DA1A41246AA4A400099486 /* BookingCell.swift in Sources */,
 				0C6345F5242E1ED400DAE759 /* Constant.swift in Sources */,
 				0C3C89EC243394CB00EE8DC2 /* ProfileSetupCell.swift in Sources */,
 				0C103E232453F78400BB2DA6 /* HomeListVC.swift in Sources */,
@@ -683,8 +754,11 @@
 				0C37EB04242B3485001DEABE /* SelectAccountVC.swift in Sources */,
 				049BACD9245D5C3000A7515C /* UserProfileVC.swift in Sources */,
 				0CF82EF72425FF530023EFDC /* SelectCountryCodeVC.swift in Sources */,
+				04348C392462E60C006F155D /* SavedCard.swift in Sources */,
 				0C43481C2424AF1D00054450 /* CustomButton.swift in Sources */,
+				045012E4246C14D60048953D /* Message.swift in Sources */,
 				0C6EBF9E24519596007337DE /* HomeMapCollectionCell.swift in Sources */,
+				04DA0D88246AC55700276431 /* EventBookingVC.swift in Sources */,
 				0C3D0B1C2445B07400F8A487 /* SelectReligionVC.swift in Sources */,
 				0C38C99A242F300200A71CC2 /* AuthServices.swift in Sources */,
 				0C0FA4FD243760F80005EFC1 /* FeetCell.swift in Sources */,
@@ -698,10 +772,12 @@
 				0CE9292F242A335300FF8935 /* JobTititleVC.swift in Sources */,
 				0C3AB24C2425D9EB00F64AE4 /* SignUpPhoneVC.swift in Sources */,
 				0CDC55422445D87F006C2063 /* SelectMarijunaVC.swift in Sources */,
+				040B2EEB246E6B6100CE7DA3 /* EventMatesCell.swift in Sources */,
 				0C3A6A1C2456B41400E99E63 /* TermsAndConditions.swift in Sources */,
 				042E42D3245C789B00BE3B49 /* ChangeFeetCell.swift in Sources */,
 				0C37EB08242B36B4001DEABE /* SetTitle.swift in Sources */,
 				0C86754D2424E815009634DD /* ForgotPasswordVC.swift in Sources */,
+				040B2EEE246E6F9600CE7DA3 /* EventMatesVC.swift in Sources */,
 				04B7DD97246035DD006217D2 /* SettingData.swift in Sources */,
 				0C717D1A2445D6D9000D79F2 /* SelectCigaretteVC.swift in Sources */,
 				0C103E252453FD3500BB2DA6 /* HomeListTableCell.swift in Sources */,

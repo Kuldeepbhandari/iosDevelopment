@@ -20,6 +20,7 @@ class JobTititleVC: UIViewController ,UITextFieldDelegate{
     
     var jobTitleArr = [String]()
     var selectTitle:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +75,7 @@ class JobTititleVC: UIViewController ,UITextFieldDelegate{
     }
     
     @IBAction func openJobListTitle(_ sender: Any) {
+        
     }
     
     @IBAction func nextBtnWasPressed(_ sender: UIButton) {

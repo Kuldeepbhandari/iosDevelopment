@@ -14,7 +14,7 @@ class ChangeHeightVC: UIViewController {
     @IBOutlet weak var feetTableView: UITableView!
     
     var feetArr = [1,2,3,4,5,6,7,8]
-    var inchArr = [1,2,3,4,5,6,7,8,9,10,11,12]
+    var inchArr = [0,1,2,3,4,5,6,7,8,9,10,11,12]
     var selectFeet = Int()
     var selectInch = Int()
     

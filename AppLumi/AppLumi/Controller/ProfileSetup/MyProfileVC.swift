@@ -137,13 +137,6 @@ class MyProfileVC: UIViewController {
                 
                 let userUploads = data["userUploads"] as! [Dictionary<String,Any>]
                 print(userUploads)
-//                for item in userUploads{
-//                    let itemImage = item["filename"]!
-//                    let image = UIImage(named: itemImage as! String)
-//                    self.imageArr.append(image!)
-//                  //  self.collectionView.reloadData()
-//                }
-//                print(self.downloadImage.count)
                 print(self.imageArr.count)
                 print(response)
                 completion(true)

@@ -21,21 +21,25 @@ class BookingDetailVC: UIViewController {
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var resturantNameLbl: UILabel!
     @IBOutlet var resutrantImage: UIImageView!
+    
+//    MARK:Variables
+    var resturantAddress:String!
+    var resturantName:String!
+    var eventDate:String!
+    var price:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initalSetup()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func initalSetup(){
+        totalLbl.text = price
+        locationLbl.text = resturantAddress
+        resturantNameLbl.text = resturantAddress
+        dateLbl.text = eventDate
+        dateAndTimingLbl.text = eventDate
     }
-    */
 
 }

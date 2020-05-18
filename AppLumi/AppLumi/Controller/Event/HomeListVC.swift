@@ -15,6 +15,7 @@ class HomeListVC: UIViewController {
     
     var eventDetails = [Event]()
 
+    var eventId : String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,7 @@ extension HomeListVC:UITableViewDelegate,UITableViewDataSource{
         cell.freeDrinksLbl.text = "\(eventDetails[indexPath.row].freeDrinks)"
         cell.resturantName.text = eventDetails[indexPath.row].address
         cell.biilLabel.text = "\(eventDetails[indexPath.row].price)"
+        eventId = eventDetails[indexPath.row].id
         cell.resturantLoaction.text = eventDetails[indexPath.row].loc.name
         cell.dateLbl.text = eventDetails[indexPath.row].eventDate.rawValue
         return cell
@@ -57,6 +59,8 @@ extension HomeListVC:UITableViewDelegate,UITableViewDataSource{
         
         guard let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "EventDetailsVC") as? EventDetailsVC else {return}
         storyboard.eventDetails = eventDetails[indexPath.row]
+        storyboard.eventId = eventId
+        
         self.navigationController?.pushViewController(storyboard, animated: true)
     }
 }

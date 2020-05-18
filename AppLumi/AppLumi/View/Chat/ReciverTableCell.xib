@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReciverTableCell" rowHeight="112" id="KGk-i7-Jjw" customClass="ReciverTableCell" customModule="AppLumi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rwt-zx-JAS">
+                        <rect key="frame" x="75" y="10" width="240" height="92"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text=" jvbdhvbjhdbvjhbvjhfbv fbvvhj jvbdhvbjhdbvjhbvjhfbv fbvvhj jvbdhvbjhdbvjhbvjhfbv fbvvhj " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POm-x1-Sak">
+                                <rect key="frame" x="10" y="20" width="220" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="12:00 Am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Duh-C5-0n0">
+                                <rect key="frame" x="184.5" y="70" width="45.5" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.1333333333" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Duh-C5-0n0" firstAttribute="top" secondItem="POm-x1-Sak" secondAttribute="bottom" constant="10" id="04y-1O-Ofe"/>
+                            <constraint firstItem="POm-x1-Sak" firstAttribute="leading" secondItem="Rwt-zx-JAS" secondAttribute="leading" constant="10" id="0Ad-eo-1z3"/>
+                            <constraint firstAttribute="bottom" secondItem="Duh-C5-0n0" secondAttribute="bottom" constant="10" id="ABN-cz-Wid"/>
+                            <constraint firstAttribute="trailing" secondItem="Duh-C5-0n0" secondAttribute="trailing" constant="10" id="Ott-5o-Bii"/>
+                            <constraint firstItem="POm-x1-Sak" firstAttribute="top" secondItem="Rwt-zx-JAS" secondAttribute="top" constant="20" id="Q1H-Vb-6QR"/>
+                            <constraint firstAttribute="trailing" secondItem="POm-x1-Sak" secondAttribute="trailing" constant="10" id="z8F-0v-ehq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Rwt-zx-JAS" secondAttribute="bottom" constant="10" id="fVH-9o-JvH"/>
+                    <constraint firstItem="Rwt-zx-JAS" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.75" id="ibz-BD-OJu"/>
+                    <constraint firstItem="Rwt-zx-JAS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="mdq-4Q-a2i"/>
+                    <constraint firstAttribute="trailing" secondItem="Rwt-zx-JAS" secondAttribute="trailing" constant="5" id="sk3-e6-SmR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="reciverTimeStampLbl" destination="Duh-C5-0n0" id="kML-BE-f99"/>
+                <outlet property="reviverMessageLbl" destination="POm-x1-Sak" id="mvy-uH-T4u"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

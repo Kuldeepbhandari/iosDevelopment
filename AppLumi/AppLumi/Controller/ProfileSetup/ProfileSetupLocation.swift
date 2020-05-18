@@ -21,7 +21,8 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
     
     var latitude = CLLocationDegrees()
     var longtitude = CLLocationDegrees()
-    
+    var mapRegionTimer: Timer?
+
     //    MARK:Variables
     let locationManager = CLLocationManager()
     let regionInMeters : Double = 10000
@@ -70,7 +71,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
     func searchLocation(){
         //crate an search request
         let searchRequest = MKLocalSearch.Request()
-        searchRequest.naturalLanguageQuery = searchText.text
+        searchRequest.naturalLanguageQuery = searchText.text!
         
         let activitySearch = MKLocalSearch(request: searchRequest)
         activitySearch.start { (response, error) in
@@ -98,11 +99,13 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
             }
         }
     }
+    
+
     func checkLocationAuthorization(){
         switch CLLocationManager.authorizationStatus(){
         case .authorizedWhenInUse:
             mapView.showsUserLocation = true
-          //  locationManager.requestLocation()
+            locationManager.requestLocation()
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
         case .denied,.restricted:
@@ -156,6 +159,8 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
 //MARK mapView Function
 
 extension ProfileSetupLocation:MKMapViewDelegate{
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let pinAnnoation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "DropablePin")
         pinAnnoation.pinTintColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
@@ -164,12 +169,48 @@ extension ProfileSetupLocation:MKMapViewDelegate{
         return pinAnnoation
     }
     
+    private func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation{
+            return nil
+        }
+        
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil{
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView?.isDraggable = true
+        }else{
+            pinView?.annotation = annotation
+        }
+        return pinView
+    }
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        // Remove all annotations
+        self.mapView.removeAnnotations(mapView.annotations)
+
+        // Add new annotation
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = mapView.centerCoordinate
+        let latitude = annotation.coordinate.latitude
+        let longtitude = annotation.coordinate.longitude
+        let geoCoder = CLGeocoder()
+        let location = CLLocation(latitude: latitude, longitude: longtitude)
+        geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            var placeMark:CLPlacemark?
+            placeMark = placemarks?[0]
+            self.searchText.text = placeMark?.name
+            
+            print(placeMark?.name)
+            print(placeMark?.postalCode)
+            
+        }
+        annotation.title = "title"
+        annotation.subtitle = "subtitle"
+        self.mapView.addAnnotation(annotation)
+    }
+    
+   
+    
+    
 }
-
-
-//extension ProfileSetupLocation:CLLocationManagerDelegate{
-//    
-//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-//        print(error.localizedDescription)
-//    }
-//}

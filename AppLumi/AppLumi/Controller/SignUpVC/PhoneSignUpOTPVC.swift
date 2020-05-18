@@ -24,8 +24,6 @@ class PhoneSignUpOTPVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initalSetup()
-        print(mobileNo)
-        print("Auhtservice\(AuthServices.instance.verifyCodeID)")
     }
     
     private func initalSetup(){
@@ -114,13 +112,7 @@ class PhoneSignUpOTPVC: UIViewController {
     }
 }
 //MARK:UitextField Delegate
-extension PhoneSignUpOTPVC:UITextFieldDelegate{
-    
-    //    MARK:This function is used to set range of textfiled
-    //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    //        return range.location < 1
-    //    }
-    
+extension PhoneSignUpOTPVC:UITextFieldDelegate{    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = ""
     }

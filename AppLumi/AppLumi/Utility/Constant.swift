@@ -38,12 +38,21 @@ let SAVE_IMAGE_ON_SERVER_URL = "\(BASE_URL)lumi-app/upload/avatar"
 let GET_IMAGE_FROM_SERVER_URL = "\(BASE_URL)lumi-app/profile/getProfilePicture"
 let GET_EVENT_DETAILS_URL = "\(BASE_URL)lumi-app/events"
 let CHECK_EXISTING_ACCOUNT = "\(BASE_URL)lumi-app/linkExistingProfile/"
+let SAVED_CARD_DETAILS_URL = "\(BASE_URL)lumi-app/saveCardDetails"
+let GET_SAVED_CARD_DETAILS_URL = "\(BASE_URL)lumi-app/getSavedCards"
+let LOGOUT_USER_URL = "\(BASE_URL)lumi-app/settings/logOut"
+let BOOKING_PAYMENT_URL = "\(BASE_URL)lumi-app/payment/savedCard"
+let GENRAL_PAYMENT_URL = "\(BASE_URL)lumi-app/payment/general"
+let BOOKING_EVENT_URL = "\(BASE_URL)lumi-app/settings/myBookings"
 //MARK:Header
 
-var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTk4MmMyMTAyNDY3MTEwNGU3NjE2MWEiLCJpYXQiOjE1ODgwNTY3NTR9.WU-QlaF0TQBjQzCSu7JJ2Z8W8VW_Wb0cITsavQj3dLg"
+var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTk4MmMyMTAyNDY3MTEwNGU3NjE2MWEiLCJpYXQiOjE1ODkxOTE4NTZ9.F2WrToPcdvjdVZAaAmfVk0z9yYnS7VgOtQfQmaOh4Rk"
+
+
+
 let HEADER  : HTTPHeaders = [
     "Content-Type" : "application/json; charset=utf-8",
-   // "Authorization" : "Bearer \(AuthServices.instance.authToken)"
+    //"Authorization" : "Bearer \(AuthServices.instance.authToken)"
     "Authorization" : "Bearer \(token)"
 
 ]
@@ -55,6 +64,8 @@ let HEADER  : HTTPHeaders = [
 
 let USER_ID = "userId"
 let AUTH_TOKEN = "authToken"
+let _Event = "event"
+let defaults = UserDefaults.standard
 
 
 //Button Color

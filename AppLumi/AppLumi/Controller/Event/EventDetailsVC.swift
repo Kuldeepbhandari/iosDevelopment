@@ -11,7 +11,7 @@ import UIKit
 class EventDetailsVC: UIViewController {
 
     var eventDetails: Event!
-
+    var eventId:String!
     @IBOutlet weak var ageLbl: UILabel!
     @IBOutlet weak var drinkAvaiableLbl: UILabel!
     @IBOutlet weak var resutrantAddressLbl: UILabel!
@@ -34,4 +34,10 @@ class EventDetailsVC: UIViewController {
         resutrantNameLbl.text = eventDetails.loc.name
     }
     
+    
+    @IBAction func bookNowBtnTapped(_ sender: UIButton) {
+        guard let getSavedCardVc = self.storyboard?.instantiateViewController(withIdentifier: "GetSavedCardsVC") as? GetSavedCardsVC else {return}
+        getSavedCardVc.eventId = eventId
+        self.navigationController?.pushViewController(getSavedCardVc, animated: true)
+    }
 }

@@ -37,7 +37,6 @@ class ProfileSetupOverview: UIViewController {
     
     
     func implementDatePicker(){
-        // datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(openDatePicker(_ :)), for: .valueChanged)
         //        Toolbaar
         let toolbaar = UIToolbar()
@@ -56,7 +55,6 @@ class ProfileSetupOverview: UIViewController {
     
     @objc func openDatePicker(_ sender:UIDatePicker){
         datePicker.datePickerMode = .date
-        
         let calender = Calendar(identifier: Calendar.Identifier.gregorian)
         var minDateComponent = calender.dateComponents([.day,.month,.year], from: Date())
         minDateComponent.day = 1
@@ -87,6 +85,7 @@ class ProfileSetupOverview: UIViewController {
         dateText.text = date
         monthTextField.text = month
     }
+    
     @objc func doneBtnTapped(){
         self.view.endEditing(true)
     }

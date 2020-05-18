@@ -40,11 +40,6 @@ class SelectCountryCodeVC: UIViewController {
     
     private func initalSetup(){
         getConutryCodeInformation()
-//        searchBar.tintColor = UIColor(displayP3Red: 178/255, green: 178/255, blue: 178/255, alpha: 1)
-//        searchBar.layer.borderWidth = 1
-//        searchBar.layer.cornerRadius = 5
-//        searchBar.clipsToBounds = true
-//        searchBar.backgroundColor = UIColor.white
         if let textField = searchBar.value(forKey: "searchField") as? UITextField{
             textField.backgroundColor = UIColor.white
             textField.layer.cornerRadius = 5

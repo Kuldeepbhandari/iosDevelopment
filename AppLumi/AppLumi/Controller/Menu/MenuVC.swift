@@ -25,6 +25,9 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func backBtnWasTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     private func setupIntialView(){
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openHomeMapView))

@@ -14,6 +14,7 @@ import SwiftyJSON
 
 class ProfileSetupBio_AnswerVC: UIViewController {
     
+    
     @IBOutlet var tableView: UITableView!
     @IBOutlet var titleView: SetTitle!
     @IBOutlet var informationView: InformationView!
@@ -66,61 +67,40 @@ extension ProfileSetupBio_AnswerVC:UITableViewDelegate,UITableViewDataSource{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as? AnswerCell {
             if AuthServices.instance.getQuetionsArr[indexPath.row].Q_id == 1{
-//                selectId = AuthServices.instance.getQuetionsArr[indexPath.row].Q_id
-                print("The question id is \(AuthServices.instance.getQuetionsArr[indexPath.row].Q_id)")
                 if let answer = cell.answerTextView.text, cell.answerTextView.text != "Enter Your Answer Here" {
                     answers = answer
                 }
-//                body = [ "answer":answers,
-//                         "Q_id":selectId
-//                ]
+               
                 cell.containerView.backgroundColor = UIColor(red: 255/255, green: 245/255, blue: 230/255, alpha: 1)
                 cell.answerBtn.backgroundColor = UIColor(red: 252/255, green: 174/255, blue: 48/255, alpha: 1)
                 cell.addBtn.backgroundColor = UIColor(red: 252/255, green: 174/255, blue: 48/255, alpha: 1)
             }else if AuthServices.instance.getQuetionsArr[indexPath.row].Q_id == 2{
-               // selectId = AuthServices.instance.getQuetionsArr[indexPath.row].Q_id
-                print("The question id is \(AuthServices.instance.getQuetionsArr[indexPath.row].Q_id)")
-
                 if let answer = cell.answerTextView.text, cell.answerTextView.text != "Enter Your Answer Here" {
                     answers = answer
                 }
-//                body = [ "answer":answers,
-//                         "Q_id":selectId
-//                ]
+               
                 cell.containerView.backgroundColor = UIColor(red: 246/255, green: 235/255, blue: 255/255, alpha: 1)
                 cell.answerBtn.backgroundColor = UIColor(red: 161/255, green: 88/255, blue: 223/255, alpha: 1)
                 cell.addBtn.backgroundColor = UIColor(red: 161/255, green: 88/255, blue: 223/255, alpha: 1)
             }else if AuthServices.instance.getQuetionsArr[indexPath.row].Q_id == 3{
-                print("The question id is \(AuthServices.instance.getQuetionsArr[indexPath.row].Q_id)")
-
-               // selectId = AuthServices.instance.getQuetionsArr[indexPath.row].Q_id
                 if let answer = cell.answerTextView.text, cell.answerTextView.text != "Enter Your Answer Here" {
                     answers = answer
                 }
-                
-//                body = [ "answer":answers,
-//                         "Q_id":selectId
-//                ]
                 cell.containerView.backgroundColor = UIColor(red: 233/255, green: 243/255, blue: 255/255, alpha: 1)
                 cell.answerBtn.backgroundColor = UIColor(red: 81/255, green: 156/255, blue: 250/255, alpha: 1)
                 cell.addBtn.backgroundColor = UIColor(red: 81/255, green: 156/255, blue: 250/255, alpha: 1)
             }else if AuthServices.instance.getQuetionsArr[indexPath.row].Q_id == 4{
-               // selectId = AuthServices.instance.getQuetionsArr[indexPath.row].Q_id
-                print("The question id is \(AuthServices.instance.getQuetionsArr[indexPath.row].Q_id)")
-
+                
                 if let answer = cell.answerTextView.text, cell.answerTextView.text != "Enter Your Answer Here" {
                     answers = answer
                 }
-                
-//                body = [ "answer":answers,
-//                         "Q_id":selectId
-//                ]
-                
                 cell.containerView.backgroundColor = UIColor(red: 228/255, green: 255/255, blue: 241/255, alpha: 1)
                 cell.answerBtn.backgroundColor = UIColor(red: 0/255, green: 208/255, blue: 104/255, alpha: 1)
                 cell.addBtn.backgroundColor = UIColor(red: 0/255, green: 208/255, blue: 104/255, alpha: 1)
             }
             cell.lblQuestions.text = AuthServices.instance.getQuetionsArr[indexPath.row].question
+            
+            cell.addBtn.addTarget(self, action: #selector(getQuestionId), for: .touchUpInside)
             
             cell.addBtnTapped = {
                 if cell.answerTextView.text == ""{
@@ -128,12 +108,6 @@ extension ProfileSetupBio_AnswerVC:UITableViewDelegate,UITableViewDataSource{
                     alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
                     self.present(alert, animated: false, completion: nil)
                 }else{
-                    
-                    let id = AuthServices.instance.getQuetionsArr.map({$0.Q_id })
-//                    let body = [
-//                        "answer":cell.answerTextView.text,
-//                        "Q_id" : id.filter({$0.})
-//                    ]
                     cell.btnStackView.isHidden = true
                     cell.viewAnswer.isHidden = true
                     cell.answerStackView.isHidden = true
@@ -176,17 +150,38 @@ extension ProfileSetupBio_AnswerVC:UITableViewDelegate,UITableViewDataSource{
         }else{
             return UITableViewCell()
         }
+        
+        
     }
-//    MARK:This function is used to save the answer in server
     
+//    MARK:This function is used to get the index value of button when we tapped on tableview cell and also used for save answer on the server
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index  = indexPath.row+1
-        print(index)
+    @objc func getQuestionId(sender:UIButton){
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
+        print(buttonPosition)
+        let indexPath = self.tableView.indexPathForRow(at: buttonPosition)
+        let id = ((indexPath?.row)! + 1)
+        let cell = self.tableView.cellForRow(at: indexPath!) as! AnswerCell
+        let answer = cell.answerTextView.text!
+        
+        body = [ "Q_id":id,
+                     "answer":answer
+        
+        ]
+        sendAnswerData { (success) in
+            if success{
+                cell.answerLabel.text = cell.answerTextView.text
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                print("Answer is saved")
+            }
+        }
     }
+    //    MARK:This function is used to save the answer in server
+    
     
     func sendAnswerData(completion:@escaping CompletionHandler){
-        print(body)
         AF.request(ANSWER_BIO_QUESTIONS, method: .put, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.error == nil{
                 print(response.value!)

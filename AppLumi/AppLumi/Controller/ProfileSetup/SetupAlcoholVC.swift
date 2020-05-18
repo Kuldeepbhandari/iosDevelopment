@@ -27,6 +27,7 @@ class SetupAlcoholVC: UIViewController {
         titleView.backBtn.addTarget(self, action: #selector(popViewController), for: .touchUpInside)
         alcoholVIew.alcoholmage.image = #imageLiteral(resourceName: "icProfileSetupAlcoholActive")
     }
+    
     @objc func popViewController(){
         self.navigationController?.popViewController(animated: true)
     }
