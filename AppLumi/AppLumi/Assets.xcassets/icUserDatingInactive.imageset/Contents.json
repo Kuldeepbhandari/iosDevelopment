@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "icUserDatingInactive.png",
       "scale" : "1x",
-      "idiom" : "universal"
-    },
-    {
-      "filename" : "icUserDatingInactive@2x.png",
-      "scale" : "2x",
+      "filename" : "icUserDatingInactive.png",
       "idiom" : "universal"
     },
     {
       "idiom" : "universal",
+      "filename" : "icUserDatingInactive@2x.png",
+      "scale" : "2x"
+    },
+    {
       "filename" : "icUserDatingInactive@3x.png",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

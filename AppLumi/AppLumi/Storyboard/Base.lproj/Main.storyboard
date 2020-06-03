@@ -4687,6 +4687,99 @@ CO 80524, USA</string>
             </objects>
             <point key="canvasLocation" x="2060" y="3338.6806596701654"/>
         </scene>
+        <!--InviteVC-->
+        <scene sceneID="Clr-Zf-8AS">
+            <objects>
+                <viewController storyboardIdentifier="InviteVC" id="JVN-b0-PM0" customClass="InviteVC" customModule="AppLumi" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yij-hW-iFs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qx2-eg-adw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aQi-iW-H6u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wg9-PF-bk8">
+                                <rect key="frame" x="166" y="37" width="43.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="GalanoClassicAltW00-SemiBd" family="GalanoClassicAltW00-SemiBd" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O1-uL-BP2">
+                                <rect key="frame" x="15" y="31" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hV7-ga-Kop">
+                                <rect key="frame" x="15" y="96" width="100" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17.5"/>
+                                <state key="normal" title="Invites Sent">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="inviteSendBtnWasTapped:" destination="JVN-b0-PM0" eventType="touchUpInside" id="679-tY-fay"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4F-c5-1B3">
+                                <rect key="frame" x="135" y="96" width="129" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17.5"/>
+                                <state key="normal" title="Invites Received">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="inviteRecivedBtnWasTapped:" destination="JVN-b0-PM0" eventType="touchUpInside" id="Igv-lI-y7j"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOK-ej-MV0">
+                                <rect key="frame" x="272" y="104" width="20" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-JS-T5L">
+                                        <rect key="frame" x="5" y="-0.5" width="10.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20392156862745098" green="0.21568627450980393" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="5ON-MF-vU0"/>
+                                    <constraint firstAttribute="height" constant="20" id="ovj-vP-XSS"/>
+                                    <constraint firstItem="hGb-JS-T5L" firstAttribute="centerY" secondItem="VOK-ej-MV0" secondAttribute="centerY" id="usL-uZ-9PB"/>
+                                    <constraint firstItem="hGb-JS-T5L" firstAttribute="centerX" secondItem="VOK-ej-MV0" secondAttribute="centerX" id="z0g-eG-BVp"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="clf-Fd-o8C">
+                                <rect key="frame" x="12" y="162" width="351" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.070588235294117646" green="0.078431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wg9-PF-bk8" firstAttribute="top" secondItem="yij-hW-iFs" secondAttribute="bottom" constant="37" id="52X-Oe-0uh"/>
+                            <constraint firstItem="U4F-c5-1B3" firstAttribute="centerY" secondItem="hV7-ga-Kop" secondAttribute="centerY" id="644-LY-kXp"/>
+                            <constraint firstItem="VOK-ej-MV0" firstAttribute="leading" secondItem="U4F-c5-1B3" secondAttribute="trailing" constant="8" id="LOS-eB-nMm"/>
+                            <constraint firstItem="7O1-uL-BP2" firstAttribute="centerY" secondItem="Wg9-PF-bk8" secondAttribute="centerY" id="Lus-3R-qJd"/>
+                            <constraint firstItem="7O1-uL-BP2" firstAttribute="leading" secondItem="aQi-iW-H6u" secondAttribute="leading" constant="15" id="N0Y-zd-uww"/>
+                            <constraint firstItem="VOK-ej-MV0" firstAttribute="centerY" secondItem="U4F-c5-1B3" secondAttribute="centerY" id="O99-Ce-KPI"/>
+                            <constraint firstAttribute="trailing" secondItem="clf-Fd-o8C" secondAttribute="trailing" constant="12" id="ZKr-Mq-fZ9"/>
+                            <constraint firstItem="U4F-c5-1B3" firstAttribute="leading" secondItem="hV7-ga-Kop" secondAttribute="trailing" constant="20" id="ZTa-XL-Uit"/>
+                            <constraint firstItem="hV7-ga-Kop" firstAttribute="leading" secondItem="7O1-uL-BP2" secondAttribute="leading" id="ZpA-d0-sNv"/>
+                            <constraint firstItem="Qx2-eg-adw" firstAttribute="top" secondItem="clf-Fd-o8C" secondAttribute="bottom" constant="30" id="gRo-nw-y7E"/>
+                            <constraint firstItem="clf-Fd-o8C" firstAttribute="leading" secondItem="aQi-iW-H6u" secondAttribute="leading" constant="12" id="iaV-dW-tRO"/>
+                            <constraint firstItem="clf-Fd-o8C" firstAttribute="top" secondItem="hV7-ga-Kop" secondAttribute="bottom" constant="30" id="kEM-3Z-msv"/>
+                            <constraint firstItem="hV7-ga-Kop" firstAttribute="top" secondItem="7O1-uL-BP2" secondAttribute="bottom" constant="35" id="tX4-DD-s52"/>
+                            <constraint firstItem="Wg9-PF-bk8" firstAttribute="centerX" secondItem="aQi-iW-H6u" secondAttribute="centerX" id="wTC-93-Fr6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="clf-Fd-o8C" id="kls-1c-rJb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kK9-mJ-RIf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3026" y="3310"/>
+        </scene>
         <!--Home ListVC-->
         <scene sceneID="ZND-Hs-8Al">
             <objects>

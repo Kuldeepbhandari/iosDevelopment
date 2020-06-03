@@ -9,6 +9,7 @@
 import UIKit
 
 class InvitesSend: UITableViewCell {
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

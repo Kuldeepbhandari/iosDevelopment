@@ -11,12 +11,18 @@ import UIKit
 class EventMatesCell: UITableViewCell {
 
     @IBOutlet weak var customView: UIView!
+    @IBOutlet weak var reportBtn: UIButton!
     
+    @IBOutlet weak var eventAddressLbl: UILabel!
+    @IBOutlet weak var eventView: UIView!
     @IBOutlet weak var chatBtn: UIButton!
     @IBOutlet weak var innviteBtn: UIButton!
     @IBOutlet weak var chatView: UIView!
     @IBOutlet weak var inviteView: UIView!
     @IBOutlet weak var personImage: UIImageView!
+    
+    @IBOutlet weak var userNameLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,10 +30,13 @@ class EventMatesCell: UITableViewCell {
         chatView.layer.cornerRadius = chatView.frame.width/2
         chatView.clipsToBounds = true
         inviteView.clipsToBounds = true
+        eventView.layer.cornerRadius = 11.5
+        
        // customView.roundCorner([.topLeft,.topRight,], radius: 50)
         
-       // addTopRoundedCornerToView(targetView: customView, desiredCurve: 30)
+        addTopRoundedCornerToView(targetView: customView, desiredCurve: 30)
         
+       // addBottomRoundedEdge(desiredView: customView)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,23 +46,29 @@ class EventMatesCell: UITableViewCell {
         
     }
     
-    func addBottomRoundedEdge(desiredCurve: CGFloat?) {
-        let offset: CGFloat = self.frame.width / desiredCurve!
-        let bounds: CGRect = self.bounds
-        
-        let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y, width: bounds.size.width, height: bounds.size.height / 2)
+    func addTopRoundedCornerToView(targetView:UIView?, desiredCurve:CGFloat?){
+        let offset:CGFloat = targetView!.frame.width/desiredCurve!
+        let bounds: CGRect = targetView!.bounds
+
+       let rectBounds: CGRect = CGRect(x: bounds.origin.x, y: bounds.origin.y+bounds.size.height / 2, width: bounds.size.width, height: bounds.size.height / 2)
         let rectPath: UIBezierPath = UIBezierPath(rect: rectBounds)
+        
         let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset, height: bounds.size.height)
         let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
         rectPath.append(ovalPath)
         
+        
+
         // Create the shape layer and set its path
         let maskLayer: CAShapeLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = rectPath.cgPath
-        
+
         // Set the newly created shape layer as the mask for the view's layer
-        self.layer.mask = maskLayer
+        targetView!.layer.mask = maskLayer
+        
+        
+        
     }
     
     
