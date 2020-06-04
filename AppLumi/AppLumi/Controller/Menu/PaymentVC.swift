@@ -15,6 +15,8 @@ class PaymentVC: UIViewController {
     @IBOutlet weak var amounttext: UITextField!
     @IBOutlet weak var cardNumberLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
+    
+    
     var cardNo : String?
     var cardName:String?
     var userName:String?
@@ -53,6 +55,9 @@ class PaymentVC: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func backBtnWasTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func savePaymentInformation(completion:CompletionHandler){

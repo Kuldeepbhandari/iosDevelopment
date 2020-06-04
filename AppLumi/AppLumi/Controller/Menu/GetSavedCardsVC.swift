@@ -40,6 +40,12 @@ class GetSavedCardsVC: UIViewController {
         }
     }
     
+    
+    func openPickerView(){
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        
+    }
     func intialSetup(){
         cvvTextF.delegate = self
         expirayYearText.delegate = self
@@ -268,7 +274,9 @@ extension GetSavedCardsVC:UITextFieldDelegate{
             return true
         }
     }
-    
-    
 }
 
+
+extension GetSavedCardsVC:UIPickerViewDelegate{
+    
+}

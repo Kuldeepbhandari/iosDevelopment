@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oqW-qQ-1ma">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9V7-ty-bKk">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -4664,12 +4664,23 @@ CO 80524, USA</string>
                                 <rect key="frame" x="15" y="155" width="345" height="497"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ol0-O8-YQ5">
+                                <rect key="frame" x="16" y="15" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnWasTapped:" destination="oqW-qQ-1ma" eventType="touchUpInside" id="SAx-Aw-sRw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.078431372549019607" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="40w-Qf-tu2" firstAttribute="leading" secondItem="cge-no-oXM" secondAttribute="leading" constant="15" id="8n9-Mi-0Hf"/>
+                            <constraint firstItem="ol0-O8-YQ5" firstAttribute="leading" secondItem="cge-no-oXM" secondAttribute="leading" constant="16" id="AJ0-PN-jWR"/>
                             <constraint firstItem="3YF-dc-dCl" firstAttribute="leading" secondItem="cge-no-oXM" secondAttribute="leadingMargin" constant="18" id="EBQ-wy-0E7"/>
                             <constraint firstItem="EhN-Kc-5JP" firstAttribute="top" secondItem="40w-Qf-tu2" secondAttribute="bottom" constant="15" id="IBC-zL-3gt"/>
+                            <constraint firstItem="ol0-O8-YQ5" firstAttribute="top" secondItem="Pj9-eF-Srh" secondAttribute="bottom" constant="15" id="N7g-D9-9oY"/>
                             <constraint firstItem="3YF-dc-dCl" firstAttribute="top" secondItem="ac8-pg-ZMy" secondAttribute="bottom" constant="30" id="RhG-9L-umJ"/>
                             <constraint firstItem="40w-Qf-tu2" firstAttribute="top" secondItem="3YF-dc-dCl" secondAttribute="bottom" constant="15" id="Txq-Mw-pgU"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="3YF-dc-dCl" secondAttribute="trailing" constant="20" id="cpW-2N-7IA"/>
@@ -6489,13 +6500,24 @@ CO 80524, USA</string>
                                     <action selector="payBtnWasTapped:" destination="24j-sy-L0m" eventType="touchUpInside" id="TsN-v4-N7F"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fef-DU-kd7">
+                                <rect key="frame" x="32" y="20" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="backBtnWasTapped:" destination="24j-sy-L0m" eventType="touchUpInside" id="mWa-ue-Xjn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235289999995" green="0.078431372550000003" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Fef-DU-kd7" firstAttribute="leading" secondItem="aXX-uN-92G" secondAttribute="leadingMargin" constant="16" id="5tG-3z-KKi"/>
                             <constraint firstItem="52e-Og-p8B" firstAttribute="centerY" secondItem="aXX-uN-92G" secondAttribute="centerY" id="NSv-de-FjU"/>
                             <constraint firstAttribute="trailing" secondItem="pPO-LP-ymD" secondAttribute="trailing" id="RQ6-fw-qUA"/>
                             <constraint firstItem="HIY-MD-U42" firstAttribute="top" secondItem="pPO-LP-ymD" secondAttribute="bottom" id="lA4-o2-4Wh"/>
                             <constraint firstItem="pPO-LP-ymD" firstAttribute="leading" secondItem="aXX-uN-92G" secondAttribute="leading" id="nXx-Ll-njS"/>
+                            <constraint firstItem="Fef-DU-kd7" firstAttribute="top" secondItem="9mr-NI-ity" secondAttribute="bottom" constant="20" id="vQ4-yd-6jA"/>
                             <constraint firstItem="52e-Og-p8B" firstAttribute="centerX" secondItem="aXX-uN-92G" secondAttribute="centerX" id="zx2-Df-fH2"/>
                         </constraints>
                     </view>

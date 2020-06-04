@@ -11,8 +11,8 @@ import UIKit
 class FeetCell: UITableViewCell {
 
     @IBOutlet var labelFeet: UILabel!
-    
     @IBOutlet var feetView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

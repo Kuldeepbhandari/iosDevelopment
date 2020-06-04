@@ -68,10 +68,13 @@ class SelectAccountVC: UIViewController {
         
         verifyAccount { (suceess) in
             if suceess{
-                self.existingAlertController()
-            }else{
                 let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
                 self.navigationController?.pushViewController(profileOverviewVc, animated: true)
+            }else{
+                self.existingAlertController()
+
+//                let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
+//                self.navigationController?.pushViewController(profileOverviewVc, animated: true)
             }
         }
     }

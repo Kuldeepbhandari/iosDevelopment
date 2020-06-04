@@ -452,7 +452,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "574AC23B-DD02-4470-83CC-CA0B46754F50"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppLumi/Controller/ProfileSetup/ProfileSetupOverview.swift"
@@ -516,7 +516,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6DC19F91-A0BD-4A60-ACE4-F4316FE4400A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
@@ -570,8 +570,8 @@
             filePath = "AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "linkAnExistingAccountBtnWasTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -586,8 +586,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
@@ -601,8 +601,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "115">
                </Location>
             </Locations>
@@ -746,8 +746,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "getSavedCardDetails(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -906,8 +906,8 @@
             filePath = "AppLumi/Controller/Menu/PaymentVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -922,8 +922,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "openPaymentVC(sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,8 +954,8 @@
             filePath = "AppLumi/Controller/Menu/PaymentVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "payBtnWasTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -970,8 +970,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/PaymentVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "41"
-                  endingLineNumber = "41"
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
                   offsetFromSymbolStart = "58">
                </Location>
                <Location
@@ -985,8 +985,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/PaymentVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "42"
-                  endingLineNumber = "42"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
                   offsetFromSymbolStart = "89">
                </Location>
             </Locations>
@@ -1002,8 +1002,8 @@
             filePath = "AppLumi/Controller/Menu/PaymentVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "payBtnWasTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1018,8 +1018,8 @@
             filePath = "AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "linkAnExistingAccountBtnWasTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1034,8 +1034,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "saveCardDetails(completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1098,8 +1098,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "generalpaymentBtnWastapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -1114,8 +1114,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/GetSavedCardsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "141"
-                  endingLineNumber = "141"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
@@ -1129,8 +1129,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/GetSavedCardsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
                   offsetFromSymbolStart = "89">
                </Location>
             </Locations>
@@ -1146,8 +1146,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "saveInfoBtnWasTapped(_:)"
             landmarkType = "7">
             <Locations>
@@ -1162,8 +1162,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/GetSavedCardsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "92"
-                  endingLineNumber = "92"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
@@ -1177,8 +1177,8 @@
                   urlString = "file:///Users/mac/Desktop/iOSDevelopment/AppLumi/AppLumi/Controller/Menu/GetSavedCardsVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
                   offsetFromSymbolStart = "86">
                </Location>
             </Locations>
@@ -1210,8 +1210,8 @@
             filePath = "AppLumi/Controller/Menu/GetSavedCardsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "230"
-            endingLineNumber = "230"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1357,6 +1357,22 @@
             startingLineNumber = "55"
             endingLineNumber = "55"
             landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "437F1DF9-FB9C-432A-9E77-42F6296CEEF9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AppLumi/Controller/SignUpVC/SelectAccountVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "tappedOnCreateNewAccount(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

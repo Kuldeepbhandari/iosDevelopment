@@ -21,7 +21,11 @@ class EventMatesVC: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
     }
     
-
+    @IBAction func backBtnWasTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }
 
 

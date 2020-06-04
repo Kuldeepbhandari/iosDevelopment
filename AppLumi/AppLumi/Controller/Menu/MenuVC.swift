@@ -38,6 +38,12 @@ class MenuVC: UIViewController {
         settingView.isUserInteractionEnabled = true
         settingView.addGestureRecognizer(settingTapGesture)
         
+      //  EventMatesVC
+        
+        let eventMateTapGesture = UITapGestureRecognizer(target: self, action: #selector(openEventmateView))
+               lumiDateView.isUserInteractionEnabled = true
+               lumiDateView.addGestureRecognizer(eventMateTapGesture)
+        
     }
     
     @objc func openHomeMapView(){
@@ -51,5 +57,9 @@ class MenuVC: UIViewController {
         self.navigationController?.pushViewController(settingVC, animated: true)
     }
     
+    @objc func openEventmateView(){
+        guard let lumiDates = self.storyboard?.instantiateViewController(withIdentifier: "EventMatesVC") as? EventMatesVC else {return}
+        self.navigationController?.pushViewController(lumiDates, animated: true)
+    }
 
 }

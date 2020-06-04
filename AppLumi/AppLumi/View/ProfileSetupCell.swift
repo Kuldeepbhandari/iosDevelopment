@@ -17,6 +17,8 @@ class ProfileSetupCell: UICollectionViewCell {
     
     @IBOutlet var addImageBtn: UIButton!
     
+    
+    
     @IBAction func addImageBtn(_ sender: UIButton) {
         tapOnAddImage?()
         

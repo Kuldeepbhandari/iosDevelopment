@@ -3,27 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		04A18C852482406300001ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C842482406300001ED9 /* AppDelegate.swift */; };
 		04A18C872482406300001ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C862482406300001ED9 /* SceneDelegate.swift */; };
-		04A18C892482406300001ED9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C882482406300001ED9 /* ViewController.swift */; };
+		04A18C892482406300001ED9 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C882482406300001ED9 /* LaunchViewController.swift */; };
 		04A18C8C2482406300001ED9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A18C8A2482406300001ED9 /* Main.storyboard */; };
 		04A18C8E2482406500001ED9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04A18C8D2482406500001ED9 /* Assets.xcassets */; };
 		04A18C912482406500001ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04A18C8F2482406500001ED9 /* LaunchScreen.storyboard */; };
+		04A18C992482414E00001ED9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C982482414E00001ED9 /* NetworkManager.swift */; };
+		04A18C9B248247C900001ED9 /* OfflineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C9A248247C900001ED9 /* OfflineViewController.swift */; };
+		04A18C9D24824CF300001ED9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C9C24824CF300001ED9 /* MainViewController.swift */; };
+		04A18C9F24824EC000001ED9 /* MainVCTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A18C9E24824EC000001ED9 /* MainVCTableCell.swift */; };
+		3390ADB03C639200ABD33B63 /* Pods_RechabilityDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66EAFD39946C0A3F26B44E52 /* Pods_RechabilityDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04A18C812482406300001ED9 /* RechabilityDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RechabilityDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04A18C842482406300001ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04A18C862482406300001ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04A18C882482406300001ED9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04A18C882482406300001ED9 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		04A18C8B2482406300001ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04A18C8D2482406500001ED9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04A18C902482406500001ED9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04A18C922482406500001ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04A18C982482414E00001ED9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04A18C9A248247C900001ED9 /* OfflineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewController.swift; sourceTree = "<group>"; };
+		04A18C9C24824CF300001ED9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		04A18C9E24824EC000001ED9 /* MainVCTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCTableCell.swift; sourceTree = "<group>"; };
+		55C252F50AF40424E82A662A /* Pods-RechabilityDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RechabilityDemo.release.xcconfig"; path = "Target Support Files/Pods-RechabilityDemo/Pods-RechabilityDemo.release.xcconfig"; sourceTree = "<group>"; };
+		66EAFD39946C0A3F26B44E52 /* Pods_RechabilityDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RechabilityDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D1E52E95D86A7AB8EA30A6C /* Pods-RechabilityDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RechabilityDemo.debug.xcconfig"; path = "Target Support Files/Pods-RechabilityDemo/Pods-RechabilityDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3390ADB03C639200ABD33B63 /* Pods_RechabilityDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +55,8 @@
 			children = (
 				04A18C832482406300001ED9 /* RechabilityDemo */,
 				04A18C822482406300001ED9 /* Products */,
+				CDFD95C165356EF981382A59 /* Pods */,
+				144848B385E7391975C3CC9E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +73,34 @@
 			children = (
 				04A18C842482406300001ED9 /* AppDelegate.swift */,
 				04A18C862482406300001ED9 /* SceneDelegate.swift */,
-				04A18C882482406300001ED9 /* ViewController.swift */,
+				04A18C882482406300001ED9 /* LaunchViewController.swift */,
 				04A18C8A2482406300001ED9 /* Main.storyboard */,
 				04A18C8D2482406500001ED9 /* Assets.xcassets */,
 				04A18C8F2482406500001ED9 /* LaunchScreen.storyboard */,
 				04A18C922482406500001ED9 /* Info.plist */,
+				04A18C982482414E00001ED9 /* NetworkManager.swift */,
+				04A18C9A248247C900001ED9 /* OfflineViewController.swift */,
+				04A18C9C24824CF300001ED9 /* MainViewController.swift */,
+				04A18C9E24824EC000001ED9 /* MainVCTableCell.swift */,
 			);
 			path = RechabilityDemo;
+			sourceTree = "<group>";
+		};
+		144848B385E7391975C3CC9E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66EAFD39946C0A3F26B44E52 /* Pods_RechabilityDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDFD95C165356EF981382A59 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8D1E52E95D86A7AB8EA30A6C /* Pods-RechabilityDemo.debug.xcconfig */,
+				55C252F50AF40424E82A662A /* Pods-RechabilityDemo.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04A18C952482406500001ED9 /* Build configuration list for PBXNativeTarget "RechabilityDemo" */;
 			buildPhases = (
+				62FE13B18BDC2F9712E0D63C /* [CP] Check Pods Manifest.lock */,
 				04A18C7D2482406300001ED9 /* Sources */,
 				04A18C7E2482406300001ED9 /* Frameworks */,
 				04A18C7F2482406300001ED9 /* Resources */,
+				913003961B26A2047E46A1E9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +171,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		62FE13B18BDC2F9712E0D63C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RechabilityDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		913003961B26A2047E46A1E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RechabilityDemo/Pods-RechabilityDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RechabilityDemo/Pods-RechabilityDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RechabilityDemo/Pods-RechabilityDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04A18C7D2482406300001ED9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04A18C892482406300001ED9 /* ViewController.swift in Sources */,
+				04A18C9F24824EC000001ED9 /* MainVCTableCell.swift in Sources */,
+				04A18C992482414E00001ED9 /* NetworkManager.swift in Sources */,
+				04A18C892482406300001ED9 /* LaunchViewController.swift in Sources */,
 				04A18C852482406300001ED9 /* AppDelegate.swift in Sources */,
+				04A18C9D24824CF300001ED9 /* MainViewController.swift in Sources */,
 				04A18C872482406300001ED9 /* SceneDelegate.swift in Sources */,
+				04A18C9B248247C900001ED9 /* OfflineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +366,7 @@
 		};
 		04A18C962482406500001ED9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D1E52E95D86A7AB8EA30A6C /* Pods-RechabilityDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +384,7 @@
 		};
 		04A18C972482406500001ED9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C252F50AF40424E82A662A /* Pods-RechabilityDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
