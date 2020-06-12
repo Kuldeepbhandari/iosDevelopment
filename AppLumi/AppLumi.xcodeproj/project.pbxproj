@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		045012E1246BC0930048953D /* ReciverTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045012DF246BC0930048953D /* ReciverTableCell.swift */; };
 		045012E2246BC0930048953D /* ReciverTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 045012E0246BC0930048953D /* ReciverTableCell.xib */; };
 		045012E4246C14D60048953D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045012E3246C14D60048953D /* Message.swift */; };
+		04581E662490A49A00BCD14C /* ReportReasonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04581E652490A49A00BCD14C /* ReportReasonVC.swift */; };
 		048304882473A5310053EA7F /* InviteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048304872473A5310053EA7F /* InviteVC.swift */; };
 		0489ECE4246117EE008242C4 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0489ECE3246117EE008242C4 /* SettingVC.swift */; };
 		048AB34A2472B1FD00CCFF67 /* OnlineWebFonts_COM_ef04fa5459177741c8e9ff985bad98e1 in Resources */ = {isa = PBXBuildFile; fileRef = 048AB3492472B1FD00CCFF67 /* OnlineWebFonts_COM_ef04fa5459177741c8e9ff985bad98e1 */; };
@@ -30,6 +31,8 @@
 		048AB35C2472B4AA00CCFF67 /* InvitesRecived.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048AB35A2472B4AA00CCFF67 /* InvitesRecived.xib */; };
 		048AB35F2472B50B00CCFF67 /* InvitesSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AB35D2472B50B00CCFF67 /* InvitesSend.swift */; };
 		048AB3602472B50B00CCFF67 /* InvitesSend.xib in Resources */ = {isa = PBXBuildFile; fileRef = 048AB35E2472B50B00CCFF67 /* InvitesSend.xib */; };
+		048D7ABD248E82760038E870 /* MaybeMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D7ABC248E82760038E870 /* MaybeMatchesVC.swift */; };
+		048D7ABF248E90150038E870 /* MaybeMatchCollectionVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D7ABE248E90150038E870 /* MaybeMatchCollectionVCCell.swift */; };
 		049178AD2462B1F100650A7E /* GetSavedCardsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049178AC2462B1F100650A7E /* GetSavedCardsVC.swift */; };
 		049BACD6245D5B1B00A7515C /* UserProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BACD5245D5B1B00A7515C /* UserProfileCell.swift */; };
 		049BACD9245D5C3000A7515C /* UserProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BACD8245D5C3000A7515C /* UserProfileVC.swift */; };
@@ -138,6 +141,7 @@
 		045012DF246BC0930048953D /* ReciverTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciverTableCell.swift; sourceTree = "<group>"; };
 		045012E0246BC0930048953D /* ReciverTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReciverTableCell.xib; sourceTree = "<group>"; };
 		045012E3246C14D60048953D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		04581E652490A49A00BCD14C /* ReportReasonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportReasonVC.swift; sourceTree = "<group>"; };
 		048304872473A5310053EA7F /* InviteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteVC.swift; sourceTree = "<group>"; };
 		0489ECE3246117EE008242C4 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		048AB3482472B0C600CCFF67 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		048AB35A2472B4AA00CCFF67 /* InvitesRecived.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitesRecived.xib; sourceTree = "<group>"; };
 		048AB35D2472B50B00CCFF67 /* InvitesSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitesSend.swift; sourceTree = "<group>"; };
 		048AB35E2472B50B00CCFF67 /* InvitesSend.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvitesSend.xib; sourceTree = "<group>"; };
+		048D7ABC248E82760038E870 /* MaybeMatchesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeMatchesVC.swift; sourceTree = "<group>"; };
+		048D7ABE248E90150038E870 /* MaybeMatchCollectionVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaybeMatchCollectionVCCell.swift; sourceTree = "<group>"; };
 		049178AC2462B1F100650A7E /* GetSavedCardsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSavedCardsVC.swift; sourceTree = "<group>"; };
 		049BACD5245D5B1B00A7515C /* UserProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCell.swift; sourceTree = "<group>"; };
 		049BACD8245D5C3000A7515C /* UserProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileVC.swift; sourceTree = "<group>"; };
@@ -311,10 +317,20 @@
 			path = "Invites Group";
 			sourceTree = "<group>";
 		};
+		048D7ABB248E824D0038E870 /* Maybe Matches */ = {
+			isa = PBXGroup;
+			children = (
+				048D7ABC248E82760038E870 /* MaybeMatchesVC.swift */,
+				048D7ABE248E90150038E870 /* MaybeMatchCollectionVCCell.swift */,
+			);
+			path = "Maybe Matches";
+			sourceTree = "<group>";
+		};
 		049BACD7245D5C0F00A7515C /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
 				049BACD8245D5C3000A7515C /* UserProfileVC.swift */,
+				04581E652490A49A00BCD14C /* ReportReasonVC.swift */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -465,6 +481,7 @@
 		0C43480B242477DF00054450 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				048D7ABB248E824D0038E870 /* Maybe Matches */,
 				049BACD7245D5C0F00A7515C /* UserProfile */,
 				0C169764245995150036107D /* MyProfile */,
 				0C3A6A1D2456B86900E99E63 /* Chat */,
@@ -652,7 +669,7 @@
 				};
 			};
 			buildConfigurationList = 0C4347EE242477C000054450 /* Build configuration list for PBXProject "AppLumi" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -766,6 +783,7 @@
 				0CD6D1BB2429D5030018F154 /* SetUpAlcoholView.swift in Sources */,
 				0C0FA505243797700005EFC1 /* RoundView.swift in Sources */,
 				049BACD6245D5B1B00A7515C /* UserProfileCell.swift in Sources */,
+				048D7ABD248E82760038E870 /* MaybeMatchesVC.swift in Sources */,
 				0CE86A13243B6AB600A89FA7 /* RegisterUser.swift in Sources */,
 				0C3C89E92433947800EE8DC2 /* ProfileSetupOverview.swift in Sources */,
 				04B124B3246413D400597B18 /* SavedCardTableCell.swift in Sources */,
@@ -790,6 +808,7 @@
 				0CE176582424FAEC00395715 /* ProfileSetupGender.swift in Sources */,
 				0C16976A2459958E0036107D /* MarijunaVC.swift in Sources */,
 				04B7DD8F245FE810006217D2 /* AddProfilePhotoVC.swift in Sources */,
+				04581E662490A49A00BCD14C /* ReportReasonVC.swift in Sources */,
 				0C0FA503243762B40005EFC1 /* SelectHeightVC.swift in Sources */,
 				0CF82EF92425FFB70023EFDC /* CountryPickerCell.swift in Sources */,
 				0C2B2B59243E3A64001D94D6 /* AnswerCell.swift in Sources */,
@@ -826,6 +845,7 @@
 				0CE9292F242A335300FF8935 /* JobTititleVC.swift in Sources */,
 				0C3AB24C2425D9EB00F64AE4 /* SignUpPhoneVC.swift in Sources */,
 				0CDC55422445D87F006C2063 /* SelectMarijunaVC.swift in Sources */,
+				048D7ABF248E90150038E870 /* MaybeMatchCollectionVCCell.swift in Sources */,
 				040B2EEB246E6B6100CE7DA3 /* EventMatesCell.swift in Sources */,
 				0C3A6A1C2456B41400E99E63 /* TermsAndConditions.swift in Sources */,
 				042E42D3245C789B00BE3B49 /* ChangeFeetCell.swift in Sources */,

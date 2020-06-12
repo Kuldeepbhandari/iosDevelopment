@@ -1,13 +1,13 @@
 {
   "images" : [
     {
-      "filename" : "icUserLocation.png",
       "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "icUserLocation.png"
     },
     {
-      "filename" : "icUserLocation@2x.png",
       "idiom" : "universal",
+      "filename" : "icUserLocation@2x.png",
       "scale" : "2x"
     },
     {

@@ -44,16 +44,17 @@ let LOGOUT_USER_URL = "\(BASE_URL)lumi-app/settings/logOut"
 let BOOKING_PAYMENT_URL = "\(BASE_URL)lumi-app/payment/savedCard"
 let GENRAL_PAYMENT_URL = "\(BASE_URL)lumi-app/payment/general"
 let BOOKING_EVENT_URL = "\(BASE_URL)lumi-app/settings/myBookings"
+let SAVE_USER_DETAILS_URL = "\(BASE_URL)lumi-app/submitDetais"
 //MARK:Header
 
-var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTk4MmMyMTAyNDY3MTEwNGU3NjE2MWEiLCJpYXQiOjE1ODkxOTE4NTZ9.F2WrToPcdvjdVZAaAmfVk0z9yYnS7VgOtQfQmaOh4Rk"
+var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZWRlMjY1YjJmYjA1MjE4YjE5MjgyZmUiLCJpYXQiOjE1OTE3MDMxMDJ9.2OrgCXVuumFetVqVD2DW6Jiof-tzVaDbvWlWy7bYUfw"
 
 
 
 let HEADER  : HTTPHeaders = [
     "Content-Type" : "application/json; charset=utf-8",
-    //"Authorization" : "Bearer \(AuthServices.instance.authToken)"
-    "Authorization" : "Bearer \(token)"
+    "Authorization" : "Bearer \(AuthServices.instance.authToken)"
+//    "Authorization" : "Bearer \(token)"
 
 ]
 

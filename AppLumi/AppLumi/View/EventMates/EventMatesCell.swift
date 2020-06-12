@@ -21,6 +21,7 @@ class EventMatesCell: UITableViewCell {
     @IBOutlet weak var inviteView: UIView!
     @IBOutlet weak var personImage: UIImageView!
     
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var userNameLbl: UILabel!
     
     override func awakeFromNib() {
@@ -31,18 +32,9 @@ class EventMatesCell: UITableViewCell {
         chatView.clipsToBounds = true
         inviteView.clipsToBounds = true
         eventView.layer.cornerRadius = 11.5
-        
-       // customView.roundCorner([.topLeft,.topRight,], radius: 50)
-        
+        eventView.clipsToBounds = true
+        containerView.layer.cornerRadius = 11.5
         addTopRoundedCornerToView(targetView: customView, desiredCurve: 30)
-        
-       // addBottomRoundedEdge(desiredView: customView)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
         
     }
     
@@ -56,19 +48,11 @@ class EventMatesCell: UITableViewCell {
         let ovalBounds: CGRect = CGRect(x: bounds.origin.x - offset / 2, y: bounds.origin.y, width: bounds.size.width + offset, height: bounds.size.height)
         let ovalPath: UIBezierPath = UIBezierPath(ovalIn: ovalBounds)
         rectPath.append(ovalPath)
-        
-        
-
         // Create the shape layer and set its path
         let maskLayer: CAShapeLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = rectPath.cgPath
-
-        // Set the newly created shape layer as the mask for the view's layer
         targetView!.layer.mask = maskLayer
-        
-        
-        
     }
     
     

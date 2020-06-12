@@ -12,4 +12,5 @@ class MyProfileCell: UICollectionViewCell {
     
     @IBOutlet var addImageBtn: UIButton!
     @IBOutlet var profileImage: UIImageView!
+    
 }

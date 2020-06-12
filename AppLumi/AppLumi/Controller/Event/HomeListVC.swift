@@ -22,7 +22,7 @@ class HomeListVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-       // print(eventDetails)
+        print(eventDetails)
     }
     
     @IBAction func backBtnWasPressed(_ sender: Any) {
@@ -48,7 +48,7 @@ extension HomeListVC:UITableViewDelegate,UITableViewDataSource{
         cell.attendPeopleLbl.text = "\(eventDetails[indexPath.row].atendees)"
         cell.freeDrinksLbl.text = "\(eventDetails[indexPath.row].freeDrinks)"
         cell.resturantName.text = eventDetails[indexPath.row].address
-        cell.biilLabel.text = "\(eventDetails[indexPath.row].price)"
+        cell.biilLabel.text = "$ \(eventDetails[indexPath.row].price)"
         eventId = eventDetails[indexPath.row].id
         cell.resturantLoaction.text = eventDetails[indexPath.row].loc.name
         cell.dateLbl.text = eventDetails[indexPath.row].eventDate.rawValue

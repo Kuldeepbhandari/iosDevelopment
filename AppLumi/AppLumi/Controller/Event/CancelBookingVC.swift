@@ -15,4 +15,7 @@ class CancelBookingVC: UIViewController {
 
     }
     
+    @IBAction func backBtnWasTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }

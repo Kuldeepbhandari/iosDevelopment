@@ -12,6 +12,8 @@ class ChangeFeetCell: UITableViewCell {
 
     @IBOutlet weak var feetLabel: UILabel!
     @IBOutlet weak var feetView: UIView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

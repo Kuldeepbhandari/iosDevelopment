@@ -8,12 +8,14 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class SelectAccountVC: UIViewController {
     
-//    MARK:Variables
+    //    MARK:Variables
     
     var mobileNo : String!
+    var message = ""
     
     //    MARK:Controller Life Cycle Method
     
@@ -23,23 +25,37 @@ class SelectAccountVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        verifyAccount { (sucees) in
-            print("sucess")
-        }
+        
     }
     
-//   MARK:This function is used to veify account a account is either exist or not .
-    func verifyAccount(completions:@escaping CompletionHandler){
+    //   MARK:This function is used to veify account a account is either exist or not .
+    func verifyAccount(compeletion:@escaping CompletionHandler){
         guard let mobileNo = mobileNo else {return}
+        print("\(mobileNo)")
         let url = "\(CHECK_EXISTING_ACCOUNT)\(mobileNo)"
         print(url)
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON {  (response) in
             if response.error == nil{
-                print(response.value)
-                completions(true)
+                guard let data = response.data else {return}
+                print("Response value \(response.value)")
+                do{
+                    guard let json = try JSON(data: data).dictionaryObject else {return}
+                    //  print(json)
+                    for  (key,value) in json{
+                        print("\(key) and \(value)")
+                        self.message = json["message"] as? String ?? ""
+                        
+                    }
+                    print("messega is \(self.message)")
+
+                    compeletion(true)
+                    
+                }catch{
+                    print(error.localizedDescription)
+                }
             }else{
                 debugPrint(response.error as Any)
-                completions(false)
+                compeletion(false)
             }
         }
     }
@@ -47,7 +63,7 @@ class SelectAccountVC: UIViewController {
     @IBAction func backBtnTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-//    MARK:This function is used to open a alert box if our account is allready exist
+    //    MARK:This function is used to open a alert box if our account is allready exist
     
     func existingAlertController(){
         let alertControoler = UIAlertController(title: "Your Account Is Allready Exist", message: "Please click on existing account", preferredStyle: .alert)
@@ -55,7 +71,7 @@ class SelectAccountVC: UIViewController {
         alertControoler.addAction(okAction)
         self.present(alertControoler, animated: true, completion: nil)
     }
-//    MARK:This function is used to open a alert box if our account is not created
+    //    MARK:This function is used to open a alert box if our account is not created
     
     func createNewAccountAlertController(){
         let alertControoler = UIAlertController(title: "Your Account is not exist", message: "Please click on create new account", preferredStyle: .alert)
@@ -63,30 +79,31 @@ class SelectAccountVC: UIViewController {
         alertControoler.addAction(okAction)
         self.present(alertControoler, animated: true, completion: nil)
     }
-//    MARK:This function is used to create a new account
+    //    MARK:This function is used to create a new account
     @IBAction func tappedOnCreateNewAccount(_ sender: UIButton) {
-        
-        verifyAccount { (suceess) in
-            if suceess{
-                let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
-                self.navigationController?.pushViewController(profileOverviewVc, animated: true)
-            }else{
-                self.existingAlertController()
-
-//                let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
-//                self.navigationController?.pushViewController(profileOverviewVc, animated: true)
+        verifyAccount { (sucess) in
+            if sucess{
+                if  self.message == "user found!"{
+                                    self.existingAlertController()
+                                }else{
+                                    let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
+                                    self.navigationController?.pushViewController(profileOverviewVc, animated: true)
+                                }
             }
         }
     }
     
-//    MARK:This function is used to check either account is exist or not
+    
+    //    MARK:This function is used to check either account is exist or not
     @IBAction func linkAnExistingAccountBtnWasTapped(_ sender: UIButton) {
         verifyAccount { (sucess) in
             if sucess{
-                guard let settingVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC else {return}
-                self.navigationController?.pushViewController(settingVc, animated: true)
-            }else{
-                self.createNewAccountAlertController()
+                if  self.message == "user found!"{
+                                    guard let settingVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC else {return}
+                                    self.navigationController?.pushViewController(settingVc, animated: true)
+                                }else{
+                                    self.createNewAccountAlertController()
+                                }
             }
         }
     }

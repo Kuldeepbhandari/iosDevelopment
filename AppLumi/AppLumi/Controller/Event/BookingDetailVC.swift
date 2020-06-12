@@ -23,23 +23,32 @@ class BookingDetailVC: UIViewController {
     @IBOutlet var resutrantImage: UIImageView!
     
 //    MARK:Variables
-    var resturantAddress:String!
-    var resturantName:String!
-    var eventDate:String!
-    var price:String!
+   
+    var eventDetails: Event!
+    let taxPrice = 500
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initalSetup()
+       // initalSetup()
+       // print(eventDetails)
         // Do any additional setup after loading the view.
+        setupInitialViews()
     }
     
-    func initalSetup(){
-        totalLbl.text = price
-        locationLbl.text = resturantAddress
-        resturantNameLbl.text = resturantAddress
-        dateLbl.text = eventDate
-        dateAndTimingLbl.text = eventDate
+    func setupInitialViews(){
+        let total = taxPrice + eventDetails.price
+        taxesLbl.text = "$ \(taxPrice)"
+        guard let eventDetail = eventDetails else {return}
+        resturantNameLbl.text = eventDetail.loc.name
+        resutrantLocationLbl.text = eventDetail.address
+        totalLbl.text = "$ \(total)"
+        ticketPriceLbl.text = "\(eventDetail.price)"
+        
     }
+    
+    @IBAction func backBtnWasTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 
 }

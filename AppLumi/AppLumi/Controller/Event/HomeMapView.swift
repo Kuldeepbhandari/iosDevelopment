@@ -100,7 +100,7 @@ extension HomeMapView:UICollectionViewDelegate,UICollectionViewDataSource,UIColl
             cell.attendLbl.text = "\(String(describing: eventDetails[indexPath.row].atendees))"
             cell.freeDrinksLbl.text = "\(String(describing: eventDetails[indexPath.row].freeDrinks))"
             cell.ageLbl.text = "\(String(describing: eventDetails[indexPath.row].ageRange.minAge)) - \(String(describing: eventDetails[indexPath.row].ageRange.maxAge))"
-            cell.priceLbl.text = "\(eventDetails[indexPath.row].price)"
+            cell.priceLbl.text = "$\(eventDetails[indexPath.row].price)"
             cell.resturantAddressLbl.text = eventDetails[indexPath.row].loc.name
         }
         return cell

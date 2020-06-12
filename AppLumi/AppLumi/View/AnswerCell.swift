@@ -43,7 +43,6 @@ class AnswerCell: UITableViewCell {
 
     @IBAction func addBtnWasPressed(_ sender: UIButton) {
         addBtnTapped?()
-        
         viewAnswer.backgroundColor = UIColor.clear
     }
     @IBAction func cancelBtnWasPressed(_ sender: UIButton) {

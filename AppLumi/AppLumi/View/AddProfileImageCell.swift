@@ -20,5 +20,6 @@ class AddProfileImageCell: UICollectionViewCell {
     }
 
     @IBAction func addBtnActionWasTapped(_ sender: UIButton) {
+        
     }
 }

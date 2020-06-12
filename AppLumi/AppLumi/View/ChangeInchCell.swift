@@ -12,6 +12,7 @@ class ChangeInchCell: UITableViewCell {
 
     @IBOutlet weak var inchLabel: UILabel!
     @IBOutlet weak var inchView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

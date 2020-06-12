@@ -125,7 +125,7 @@ class CreatePostViewController: UIViewController {
     }
     
     //    MARK:This function is used to upload image in firebase
-    func uploadImageOnFirebase(data:Data){
+    func uploadImageOnFirebase(data:Data,caption:String){
         
         if let user = Auth.auth().currentUser{
             progressIndicator.isHidden = false
@@ -155,7 +155,8 @@ class CreatePostViewController: UIViewController {
                     //MArk:to download image from database
                     stroageRef.downloadURL { (url, error) in
                         if let url = url , error == nil{
-                            UserModel.collection.child(user.uid).updateChildValues(["profile_image":url.absoluteString])
+                          //  UserModel.collection.child(user.uid).updateChildValues(["profile_image":url.absoluteString])
+                            PostModel.newPost(userId: user.uid, caption: caption, imageDownloadUrl: url.absoluteString)
                             
                         }else{
                             let alert = Helper.errorAlert(title: "Upload Image Error", message: "There is an error uploading to image")
@@ -244,6 +245,13 @@ class CreatePostViewController: UIViewController {
     
     
     @IBAction func postButtonDidTouch(_ sender: Any) {
+        
+        guard let caption = postCaptionTextView.text , !postCaptionTextView.text.isEmpty else {return}
+        if let resizedImage = postImage.resized(toWidth: 1080){
+            if let imageData = resizedImage.jpegData(compressionQuality: 0.75){
+                uploadImageOnFirebase(data: imageData, caption: caption)
+            }
+        }
     }
     
     

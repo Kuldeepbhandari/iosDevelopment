@@ -42,8 +42,12 @@ class PaymentVC: UIViewController {
         
         savePaymentInformation { (sucess) in
             if sucess{
+               
                 let alertController = UIAlertController(title: "Payment Suucess", message: "Conguraltion", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                let okAction = UIAlertAction(title: "Ok", style: .default) { (actio) in
+                    guard let eventBookingVc = self.storyboard?.instantiateViewController(identifier: "BookingDetailVC") as? BookingDetailVC else {return}
+                                   self.navigationController?.pushViewController(eventBookingVc, animated: true)
+                }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }else{
@@ -60,7 +64,7 @@ class PaymentVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    func savePaymentInformation(completion:CompletionHandler){
+    func savePaymentInformation(completion:@escaping CompletionHandler){
         guard let eventId = eventId , let cardNumber = cardNo , let cvv = cvvText.text , cvvText.text != "" else {return}
         
         let body : [String:Any] = [ "event_id":eventId,
@@ -71,8 +75,10 @@ class PaymentVC: UIViewController {
         AF.request(BOOKING_PAYMENT_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.error == nil{
                 print(response.value)
+                completion(true)
             }else{
                 debugPrint(response.error?.localizedDescription)
+                completion(false)
             }
         }
     }

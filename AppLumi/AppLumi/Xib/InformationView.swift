@@ -28,6 +28,7 @@ class InformationView: UIView {
         super.init(frame: frame)
         commonInit()
     }
+    
     func commonInit() {
         Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
         self.addSubview(containerView)

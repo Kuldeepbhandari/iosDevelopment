@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -61,7 +61,7 @@
                         <constraint firstAttribute="width" constant="130" id="hdT-Sf-ZKi"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfileSetupEducationActive" translatesAutoresizingMaskIntoConstraints="NO" id="Ebk-ad-qcK">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icProfileSetupEducationInactive" translatesAutoresizingMaskIntoConstraints="NO" id="Ebk-ad-qcK">
                     <rect key="frame" x="152" y="21.5" width="30.5" height="30.5"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30.5" id="SHc-ve-FrY"/>
@@ -151,7 +151,7 @@
     <resources>
         <image name="icProfileSetupAgeInactive" width="27.5" height="27.5"/>
         <image name="icProfileSetupCigaretteInactive" width="27.5" height="27.5"/>
-        <image name="icProfileSetupEducationActive" width="32.5" height="32.5"/>
+        <image name="icProfileSetupEducationInactive" width="27.5" height="27.5"/>
         <image name="icProfileSetupGenderInactive" width="27.5" height="27.5"/>
         <image name="icProfileSetupJobInactive" width="27.5" height="27.5"/>
         <image name="icProfileSetupPoliticalInactive" width="27.5" height="27.5"/>

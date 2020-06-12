@@ -111,10 +111,10 @@ extension EventBookingVC:UITableViewDelegate,UITableViewDataSource{
         let indexPath = self.tableView.indexPathForRow(at: buttonPostion)
         let cell = self.tableView.cellForRow(at: indexPath!) as? BookingCell
         guard let bookingVc = self.storyboard?.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC else {return}
-        bookingVc.price = (cell?.amountLbl.text)!
-        bookingVc.eventDate = cell?.evetntDateLbl.text
-        bookingVc.resturantAddress = cell?.addressLbl.text
-        bookingVc.resturantName = cell?.resutrantNameLbl.text
+//        bookingVc.price = (cell?.amountLbl.text)!
+//        bookingVc.eventDate = cell?.evetntDateLbl.text
+//        bookingVc.resturantAddress = cell?.addressLbl.text
+//        bookingVc.resturantName = cell?.resutrantNameLbl.text
         self.navigationController?.pushViewController(bookingVc, animated: true)
     }
     

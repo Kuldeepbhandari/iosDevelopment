@@ -90,18 +90,18 @@ class PhoneSignUpOTPVC: UIViewController {
         guard let countryCode = self.countryCode , countryCode != "" else {return}
         AuthServices.instance.veirfyOtp(countryCode: countryCode, mobileNo: mobileNo, Otp: verifyCode) { (sucess) in
             if sucess {
-                print("sucess")
                 print(AuthServices.instance.verifyCodeID)
                 if AuthServices.instance.verifyCodeID != ""{
                     let storyboard = self.storyboard?.instantiateViewController(identifier: SELECTACCOUNTVC) as! SelectAccountVC
                     storyboard.mobileNo = mobileNo
                     self.navigationController?.pushViewController(storyboard, animated: true)
                 }else{
+            
                     let alert = UIAlertController(title: "Please Enter Correct OTP", message: "", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
-            }else{
+            //}else{
                 print("Otp is wrong")
             }
         }

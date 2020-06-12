@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SelectAgeVC: UIViewController {
 
@@ -37,6 +38,12 @@ class SelectAgeVC: UIViewController {
     }
     //MARK:This function is used to go to next Screen
     @IBAction func tappedOnNextBtn(_ sender: Any) {
+        
+        submitUserDetails { (sucess) in
+            if sucess{
+                print("User detail is saved")
+            }
+        }
         guard let age = selectAgeLbl.text , selectAgeLbl.text != "" else {return}
         AuthServices.instance.updateDataOnServer(dict: ["max_age":age], url: UPDATE_AGE_URL) { (sucess) in
             if sucess{
@@ -46,5 +53,19 @@ class SelectAgeVC: UIViewController {
             print("age is saved")
         }
     }
+    
+    
+    func submitUserDetails(compeltion:@escaping CompletionHandler){
+           AF.request(SAVE_USER_DETAILS_URL, method: .put, parameters: nil, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+               if response.error == nil{
+                print(response.value as Any)
+                   compeltion(true)
+               }else{
+                   debugPrint(response.error?.localizedDescription as Any)
+                   compeltion(false)
+               }
+           }
+           
+       }
     
 }

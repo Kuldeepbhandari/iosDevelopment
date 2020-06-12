@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import Alamofire
 
-class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
+class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManagerDelegate {
     
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchBarView: CustomView!
@@ -31,6 +31,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
         super.viewDidLoad()
         checkLocationManager()
         informationView.locationImage.image = #imageLiteral(resourceName: "icProfileSetupLocationActive")
+        locationManager.delegate = self
     }
     
     
@@ -39,12 +40,17 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
         let body : [String:Any] = ["latitude":latitude,
                                    "longitude":longtitude
         ]
+        
+        
         AF.request(UPDATE_LOCATION_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
             if response.error == nil{
                 print(response.value)
+                
                 print("location is send to the user")
                 completion(true)
-            }else{
+            }
+            
+            else{
                 debugPrint(response.error as Any)
                 completion(false)
             }
@@ -58,6 +64,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
     }
     
     //    MARK:This function is used to check the status of is user access the location service or not
+    
     func checkLocationManager(){
         if CLLocationManager.locationServicesEnabled(){
             setUpLocationManager()

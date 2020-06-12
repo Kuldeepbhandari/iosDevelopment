@@ -19,6 +19,7 @@ class SaveCardInfoVC: UIViewController {
     @IBOutlet var cardNoTextField: UITextField!
     @IBOutlet var nameTextField: UITextField!
     
+    var flag = false
     var eventId:String?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,13 @@ class SaveCardInfoVC: UIViewController {
     }
    
     @IBAction func savedCardInfoBtnWasPressed(_ sender: UIButton) {
+        if flag == false{
+            savedInfoBtn.setImage(#imageLiteral(resourceName: "icRadioInactive"), for: .normal)
+            flag = true
+        }else if flag == true{
+            savedInfoBtn.setImage(#imageLiteral(resourceName: "icAddImg"), for: .normal)
+        }
+        
         saveCardDetails { (sucees) in
             if sucees{
                 print("card details is saved")

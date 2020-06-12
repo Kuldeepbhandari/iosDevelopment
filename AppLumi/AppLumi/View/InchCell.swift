@@ -22,13 +22,14 @@ class InchCell: UITableViewCell {
         if selected{
            inchView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
             inchView.layer.cornerRadius = 20
-            inchView.clipsToBounds = true
+            labelInch.textColor = UIColor.black
+            labelInch.font = UIFont(name: "GalanoClassicAltW00-SemiBd", size: 22.5)
             labelInch.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
+            inchView.clipsToBounds = true
         }else{
             inchView.backgroundColor = UIColor.clear
             labelInch.textColor = UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1)
         }
-        // Configure the view for the selected state
     }
 
 }

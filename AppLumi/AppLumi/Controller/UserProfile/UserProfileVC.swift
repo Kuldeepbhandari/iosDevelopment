@@ -26,6 +26,7 @@ class UserProfileVC: UIViewController {
     @IBOutlet weak var userAgeLbl: UILabel!
     @IBOutlet weak var userNameLbl: UILabel!
     @IBOutlet weak var userLocationLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +35,23 @@ class UserProfileVC: UIViewController {
         collectionView.dataSource = self
     }
     
+    
+    func showPopover(base: UIView) {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ReportReasonVC") as? ReportReasonVC {
 
+            let navController = UINavigationController(rootViewController: viewController)
+            navController.modalPresentationStyle = .overCurrentContext
+            navController.navigationBar.isHidden = true
+
+                self.present(navController, animated: true, completion: nil)
+            
+        }
+    }
+    
+    @IBAction func reportBtnWasTapped(_ sender: UIButton) {
+        showPopover(base: sender)
+    }
+    
    
 }
 

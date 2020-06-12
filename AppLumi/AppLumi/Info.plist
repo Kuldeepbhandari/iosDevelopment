@@ -66,5 +66,7 @@
 	<string>Please allow the application</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Please allow the application</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<string>No</string>
 </dict>
 </plist>

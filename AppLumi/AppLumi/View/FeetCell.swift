@@ -23,14 +23,14 @@ class FeetCell: UITableViewCell {
         if selected{
             feetView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
             feetView.layer.cornerRadius = 20
+            labelFeet.textColor = UIColor.black
             feetView.clipsToBounds = true
-            labelFeet.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1)
         }else{
             feetView.backgroundColor = UIColor.clear
             labelFeet.textColor = UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1)
+            labelFeet.font = UIFont(name: "GalanoClassicAltW00-SemiBd", size: 22.5)
         }
 
-        // Configure the view for the selected state
     }
 
 }

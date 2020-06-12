@@ -113,8 +113,52 @@ class Model {
 }
 
 
-//class PostModel{
-//    var collection:DatabaseReference{
-//        return 
-//    }
-//}
+class PostModel{
+    
+   static var collection:DatabaseReference{
+        get{
+            return Database.database().reference().child("posts")
+        }
+    }
+    
+    static func newPost(userId:String,caption:String,imageDownloadUrl:String){
+        let datePosted = Date().timeIntervalSince1970
+        guard let key = PostModel.collection.childByAutoId().key else {return}
+        
+        let post : [String:Any] = ["user":userId,
+                                   "image":imageDownloadUrl,
+                                   "caption":caption,
+                                   "date":datePosted
+        
+        ]
+        
+        PostModel.collection.updateChildValues(["\(key)":post])
+        
+        let personaFeedRef = UserModel.perosnalFeed
+        print(personaFeedRef)
+        personaFeedRef.child(userId).updateChildValues(["\(key)":post])
+        
+        
+        
+    }
+    
+    var date:Date?
+    var userId:String?
+    var caption:String?
+    var imageUrl:URL?
+    
+    init?(_ snapshot:DataSnapshot){
+        guard let value = snapshot.value as? [String:Any] else {return}
+        print(value)
+        guard let date = value["date"] as? Double  else {return  nil}
+        guard let userId = value["used"] as? String else {return}
+        guard let caption = value["caption"] as? String else {return}
+        guard let imagePath = value["image"] as? String else {return nil}
+        guard let imageURL = URL(string: imagePath) else {return}
+        self.caption = caption
+        self.userId = userId
+        self.date = Date.init(timeIntervalSince1970: date)
+        self.imageUrl = imageURL
+        
+    }
+}

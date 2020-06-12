@@ -52,6 +52,10 @@ class SignUpPhoneVC: UIViewController {
                 getOtpVC.mobileNo = mobileNo
                 self.navigationController?.pushViewController(getOtpVC, animated: true)
             }else{
+//                let getOtpVC = self.storyboard?.instantiateViewController(identifier: PHONESIGNUPOTPVC) as! PhoneSignUpOTPVC
+//                getOtpVC.countryCode = countrCode
+//                getOtpVC.mobileNo = mobileNo
+//                self.navigationController?.pushViewController(getOtpVC, animated: true)
                 print("not get otp")
             }
         }

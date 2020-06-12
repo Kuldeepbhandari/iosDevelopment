@@ -23,9 +23,13 @@ class HomeMapCollectionCell: UICollectionViewCell {
     @IBOutlet var pubImage: UIImageView!
     @IBOutlet var bookBtnWasPressed: UIButton!
     
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        containerView.layer.cornerRadius = 11.2
+        ticketCountAvaiableLbl.layer.cornerRadius = 11.2
+        ticketCountAvaiableLbl.clipsToBounds = true
         
     }
     

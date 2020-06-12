@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBOutlet weak var tableView: UITableView!
     
-    var posts: [Post] = [Post]()
+    var posts: NSMutableArray   = []
     
     var profileType: ProfileType = .personal
     
@@ -57,6 +57,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var uploadTask:StorageUploadTask?
     
     var uiImagePicker = UIImagePickerController()
+    
+    var userPostRef:DatabaseReference?{
+        guard let userId = Auth.auth().currentUser?.uid else {return nil}
+        return UserModel.perosnalFeed.child(userId)
+        
+    }
+    
+    let PAGINATION_COUNT : UInt = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,9 +115,30 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             UIViewController.removeLoading(spinner: spinner)
             guard let user = UserModel(snapshot) else {return}
             strongself.user = user
+//            DispatchQueue.main.async {
+//                strongself.tableView.reloadData()
+//
+//            }
+          //  self?.uploadImageOnFirebase(data: <#T##Data#>)
+            strongself.getUserPost()
+        }
+    }
+    
+//    MARK:this function is used to get user post
+    
+    func getUserPost(){
+        guard let userPostRef = userPostRef else {return}
+        let userRefQuery = userPostRef.queryOrderedByKey().queryLimited(toLast: PAGINATION_COUNT)
+        userRefQuery.observeSingleEvent(of: .value) {[weak self] (snapshot) in
+            guard let strongself = self else {return}
+            
+            for item in snapshot.children{
+                guard let snapshot = item as? DataSnapshot else {continue}
+                guard let post = PostModel(snapshot)  else {continue}
+                strongself.posts.insert(post, at: 0)
+            }
             DispatchQueue.main.async {
                 strongself.tableView.reloadData()
-                
             }
         }
     }
@@ -248,6 +277,10 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         else if indexPath.section == 2 {
             
             let feedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell") as! FeedTableViewCell
+            let post = posts[indexPath.row] as! PostModel
+            feedTableViewCell.postImage.sd_cancelCurrentImageLoad()
+            feedTableViewCell.postImage.sd_setImage(with: post.imageUrl, completed: nil)
+            feedTableViewCell.postCommentLabel.text = post.caption
             
             return feedTableViewCell
             

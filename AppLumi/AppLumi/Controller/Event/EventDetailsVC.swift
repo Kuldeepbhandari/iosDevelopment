@@ -20,9 +20,11 @@ class EventDetailsVC: UIViewController {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var resutrantNameLbl: UILabel!
     @IBOutlet weak var ticketAvaialbleBl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitalView()
+        print(eventDetails)
     }
     
     func setupInitalView(){
@@ -34,10 +36,14 @@ class EventDetailsVC: UIViewController {
         resutrantNameLbl.text = eventDetails.loc.name
     }
     
+    @IBAction func backBtnWasTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     @IBAction func bookNowBtnTapped(_ sender: UIButton) {
         guard let getSavedCardVc = self.storyboard?.instantiateViewController(withIdentifier: "GetSavedCardsVC") as? GetSavedCardsVC else {return}
         getSavedCardVc.eventId = eventId
+        getSavedCardVc.eventDetails = eventDetails
         self.navigationController?.pushViewController(getSavedCardVc, animated: true)
     }
 }

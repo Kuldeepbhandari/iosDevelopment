@@ -22,9 +22,16 @@ class HomeListTableCell: UITableViewCell {
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var resturantImage: UIImageView!
+    
+    @IBOutlet weak var containerView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        containerView.layer.cornerRadius = 11.2
+        ticketAviableLbl.layer.cornerRadius = 11.2
+        ticketAviableLbl.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,5 +41,6 @@ class HomeListTableCell: UITableViewCell {
     }
 
     @IBAction func bookBtnWasPressed(_ sender: UIButton) {
+        
     }
 }

@@ -64,7 +64,7 @@ class SettingVC: UIViewController {
                 if sucess == "SUCCESS"{
                     let alert = UIAlertController(title: "User Logout Successfully", message: "", preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-                        guard let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "PhoneSignUpOTPVC") as? PhoneSignUpOTPVC else {return}
+                        guard let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "SignUpPhoneVC") as? SignUpPhoneVC else {return}
                         self.navigationController?.pushViewController(storyboard, animated: true)
                     }
                     alert.addAction(okAction)

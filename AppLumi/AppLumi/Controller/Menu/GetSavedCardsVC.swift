@@ -25,11 +25,15 @@ class GetSavedCardsVC: UIViewController {
     var savedCard = [Card]()
     var name:String?
     var eventId : String?
+    var flag = false
+    var eventDetails: Event!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         intialSetup()
+        print(eventDetails)
     }
     
     
@@ -95,6 +99,12 @@ class GetSavedCardsVC: UIViewController {
     }
     //    MARK:Save card info button was tappped
     @IBAction func saveInfoBtnWasTapped(_ sender: UIButton) {
+        if flag == false{
+                   saveInfoBtn.setImage(#imageLiteral(resourceName: "icRadioInactive"), for: .normal)
+                   flag = true
+               }else if flag == true{
+                   saveInfoBtn.setImage(#imageLiteral(resourceName: "icAddImg"), for: .normal)
+               }
         saveCardDetails { (sucess) in
             if sucess{
                 print("card is saved")
@@ -147,7 +157,12 @@ class GetSavedCardsVC: UIViewController {
         payFirstTimeUser { (sucees) in
             if sucees{
                 let alertController = UIAlertController(title: "Payment Suucess", message: "Conguraltion", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+             //   let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+                    guard let bookingDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "BookingDetailVC") as? BookingDetailVC else {return}
+                    bookingDetailVC.eventDetails = self.eventDetails
+                    self.navigationController?.pushViewController(bookingDetailVC, animated: true)
+                }
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
             }else{

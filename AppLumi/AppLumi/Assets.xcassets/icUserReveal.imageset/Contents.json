@@ -1,9 +1,9 @@
 {
   "images" : [
     {
-      "filename" : "icUserReveal.png",
+      "scale" : "1x",
       "idiom" : "universal",
-      "scale" : "1x"
+      "filename" : "icUserReveal.png"
     },
     {
       "filename" : "icUserReveal@2x.png",
@@ -11,8 +11,8 @@
       "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
       "filename" : "icUserReveal@3x.png",
+      "idiom" : "universal",
       "scale" : "3x"
     }
   ],

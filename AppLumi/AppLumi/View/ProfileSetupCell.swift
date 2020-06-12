@@ -21,8 +21,6 @@ class ProfileSetupCell: UICollectionViewCell {
     
     @IBAction func addImageBtn(_ sender: UIButton) {
         tapOnAddImage?()
-        
-        
     }
 }
 

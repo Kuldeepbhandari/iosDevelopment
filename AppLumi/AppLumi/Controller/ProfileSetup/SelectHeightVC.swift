@@ -52,6 +52,8 @@ class SelectHeightVC: UIViewController {
     }
     
     @IBAction func nextBtnWasTapped(_ sender: UIButton) {
+        
+        
         saveDataOnServer { (sucess) in
             if sucess{
                 print("Height is saved")
@@ -60,6 +62,9 @@ class SelectHeightVC: UIViewController {
             }
         }
     }
+    
+    
+   
     
 }
 extension SelectHeightVC:UITableViewDelegate,UITableViewDataSource{

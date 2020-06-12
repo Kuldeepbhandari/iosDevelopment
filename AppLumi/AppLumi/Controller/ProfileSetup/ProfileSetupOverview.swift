@@ -21,10 +21,12 @@ class ProfileSetupOverview: UIViewController {
     
     //    MARK:Variables
     let datePicker = UIDatePicker()
-    var selectedGender:Gender?
+    var selectedGender:Gender!
     var selectImageArr = [UIImage]()
     var selectImage = Int()
     var pickedImage = UIImage()
+    
+//    MARK:Viewlife cycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,64 +37,7 @@ class ProfileSetupOverview: UIViewController {
         informationView.profileImage.image = #imageLiteral(resourceName: "icProfileSetupOverviewActive")
     }
     
-    
-    func implementDatePicker(){
-        datePicker.addTarget(self, action: #selector(openDatePicker(_ :)), for: .valueChanged)
-        //        Toolbaar
-        let toolbaar = UIToolbar()
-        toolbaar.sizeToFit()
-        let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnTapped))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        let canelBtn = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBtnTapped))
-        toolbaar.setItems([doneBtn,spaceButton,canelBtn], animated: false)
-        yearText.inputAccessoryView = toolbaar
-        dateText.inputAccessoryView = toolbaar
-        monthTextField.inputAccessoryView = toolbaar
-        yearText.inputView = datePicker
-        dateText.inputView = datePicker
-        monthTextField.inputView = datePicker
-    }
-    
-    @objc func openDatePicker(_ sender:UIDatePicker){
-        datePicker.datePickerMode = .date
-        let calender = Calendar(identifier: Calendar.Identifier.gregorian)
-        var minDateComponent = calender.dateComponents([.day,.month,.year], from: Date())
-        minDateComponent.day = 1
-        minDateComponent.month = 1
-        minDateComponent.year = 1960
-        let minDate = calender.date(from: minDateComponent)
-        var maxDateComponent = calender.dateComponents([.day,.month,.year], from: Date())
-        maxDateComponent.day = 1
-        maxDateComponent.month = 1
-        maxDateComponent.year = 2002
-        let maxDate = calender.date(from: maxDateComponent)
-        self.datePicker.minimumDate = minDate
-        self.datePicker.maximumDate = maxDate
-        
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        
-        //  2018/11/30 YYYY//DD//MM
-        formatter.locale = Locale(identifier: "ja_JP")
-        let selectDate = formatter.string(from: datePicker.date)
-        print(selectDate)
-        let dateArr = selectDate.components(separatedBy: "/")
-        let year = dateArr[0]
-        let date = dateArr[1]
-        let month = dateArr[2]
-        yearText.text = year
-        dateText.text = date
-        monthTextField.text = month
-    }
-    
-    @objc func doneBtnTapped(){
-        self.view.endEditing(true)
-    }
-    
-    @objc func  cancelBtnTapped(){
-        self.view.endEditing(true)
-    }
+
     @objc func popViewController(){
         self.navigationController?.popViewController(animated: true)
     }
@@ -106,16 +51,15 @@ class ProfileSetupOverview: UIViewController {
             selectedGender = .Others
         }
     }
-    
+//    MARK:This function is used to navigate the next view contoller
     @IBAction func nextBtnWasPressed(_ sender: UIButton) {
-        
         guard let userName = nameText.text , nameText.text != nil else {return}
         guard let month = monthTextField.text , monthTextField.text != nil else {return}
         guard let day = dateText.text , dateText.text != nil else {return}
         guard let year = yearText.text , yearText.text != nil else {return}
-        guard let gender = selectedGender?.rawValue else {return}
+        guard let gender = selectedGender else {return}
         let dob = "\(month)-\(day)-\(year)"
-        AuthServices.instance.registerUser(userName: userName, gender: gender, dob: dob) { (sucess) in
+        AuthServices.instance.registerUser(userName: userName, gender: gender.rawValue, dob: dob) { (sucess) in
             if sucess{
                 guard let setupLocationVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupLocation") as? ProfileSetupLocation else {return}
                 self.navigationController?.pushViewController(setupLocationVC, animated: false)
@@ -123,12 +67,70 @@ class ProfileSetupOverview: UIViewController {
         }
     }
 }
+
+//MARK:Implement data picker function
+
+extension ProfileSetupOverview{
+    //    MARK:Date Picker function
+        func implementDatePicker(){
+            datePicker.addTarget(self, action: #selector(openDatePicker), for: .valueChanged)
+            //        Toolbaar
+            datePicker.datePickerMode = .date
+            let toolbaar = UIToolbar()
+            toolbaar.sizeToFit()
+            let doneBtn = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneBtnTapped))
+            let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+            let canelBtn = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelBtnTapped))
+            toolbaar.setItems([doneBtn,spaceButton,canelBtn], animated: false)
+            yearText.inputAccessoryView = toolbaar
+            dateText.inputAccessoryView = toolbaar
+            monthTextField.inputAccessoryView = toolbaar
+            yearText.inputView = datePicker
+            dateText.inputView = datePicker
+            monthTextField.inputView = datePicker
+        }
+    //    MARK:This function is used to pick date
+        @objc func openDatePicker(){
+            let calender = Calendar(identifier: Calendar.Identifier.gregorian)
+            var minDateComponent = calender.dateComponents([.day,.month,.year], from: Date())
+            minDateComponent.day = 1
+            minDateComponent.month = 1
+            minDateComponent.year = 1960
+            let minDate = calender.date(from: minDateComponent)
+            var maxDateComponent = calender.dateComponents([.day,.month,.year], from: Date())
+            maxDateComponent.day = 1
+            maxDateComponent.month = 1
+            maxDateComponent.year = 2002
+            let maxDate = calender.date(from: maxDateComponent)
+            self.datePicker.minimumDate = minDate
+            self.datePicker.maximumDate = maxDate
+            let formatter = DateFormatter()
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .none
+            //  2018/11/30 YYYY//DD//MM
+            formatter.locale = Locale(identifier: "ja_JP")
+            let selectDate = formatter.string(from: datePicker.date)
+            print(selectDate)
+            let dateArr = selectDate.components(separatedBy: "/")
+            let year = dateArr[0]
+            let date = dateArr[1]
+            let month = dateArr[2]
+            yearText.text = year
+            dateText.text = date
+            monthTextField.text = month
+        }
+        
+        @objc func doneBtnTapped(){
+            self.view.endEditing(true)
+        }
+        
+        @objc func  cancelBtnTapped(){
+            self.view.endEditing(true)
+        }
+}
+
 //MARK:Uicollection view delegate and datasource method
 extension ProfileSetupOverview:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         selectImage = selectImageArr.count == 0 ?  1 : selectImageArr.count
@@ -180,9 +182,7 @@ extension ProfileSetupOverview:UIImagePickerControllerDelegate,UINavigationContr
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImages = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             pickedImage = pickedImages
-            
             selectImageArr.append(pickedImage)
-            
             groupProfile { (sucess) in
                 if sucess{
                     print("image is upload")
@@ -204,15 +204,6 @@ extension ProfileSetupOverview:UIImagePickerControllerDelegate,UINavigationContr
     func groupProfile(completion:@escaping CompletionHandler){
         AF.upload(multipartFormData: { multipartFormData in
             
-//            let jpegData = self.pickedImage.jpegData(compressionQuality: 1.0)
-//            let parameter : [String:Any] = [ "avatar" : jpegData]
-
-//            for (key, value) in parameter
-//               {
-//                multipartFormData.append(((value) as AnyObject).data(using: String.Encoding.utf8.rawValue)!, withName: key)
-//               }
-            
-             //   multipartFormData.append(Data((jpegData)!), withName: "filename")
             if let jpegData = self.pickedImage.jpegData(compressionQuality: 1.0) {
                     multipartFormData.append(jpegData, withName: "avatar", fileName: "avatar", mimeType: "image/jpeg")
                 }

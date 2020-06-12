@@ -12,7 +12,6 @@ import Alamofire
 class MyProfileVC: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    
     @IBOutlet var lblDrugs: UILabel!
     @IBOutlet var lblMarijuna: UILabel!
     @IBOutlet var lblAlcohol: UILabel!
@@ -30,13 +29,14 @@ class MyProfileVC: UIViewController {
     @IBOutlet var lblUserName: UILabel!
     @IBOutlet var collectionView: UICollectionView!
     
-//    MARK:Variables
+    //    MARK:Variables
     var feet:Int?
     var inch:Int?
     var minimumAge:Int?
     var maximumAge:Int?
     var question:String?
     var answer:String?
+    var selectImage = Int()
     var getQuestionArr : [GetQuestions] = [] {
         didSet{
             tableView.reloadData()
@@ -44,7 +44,10 @@ class MyProfileVC: UIViewController {
     }
     
     var downloadImage : UIImage?
-    var imageArr = [UIImage]()
+    var pickedImage = UIImage()
+    
+    // var imageArr = [UIImage]()
+    var selectImageArr = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
         initalSetupViews()
@@ -71,11 +74,12 @@ class MyProfileVC: UIViewController {
     }
     
     @IBAction func openWelcomePage(_ sender: UIButton) {
+        
         guard let menuVC = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC else {return}
         self.navigationController?.pushViewController(menuVC, animated: true)
     }
     
-//
+    //
     func getImageFromServer(completion:CompletionHandler){
         let url = URL(string: "http://3.92.170.227:7008/pic1.jpg")
         AF.request(url!, method: .get, parameters: nil, encoding: URLEncoding.default, headers: HEADER).responseData { (response) in
@@ -96,18 +100,19 @@ class MyProfileVC: UIViewController {
             if response.error == nil{
                 guard let json = response.value as? Dictionary<String,Any> else {return}
                 guard let data = json["data"] as? Dictionary<String,Any> else {return}
+                print(data)
                 let alocholInfo = data["alcohol_info"] as? String
                 self.lblAlcohol.text = alocholInfo
                 let bioArr = data["bio"] as! [Dictionary<String,Any>]
                 for item in bioArr{
                     self.question = item["question"] as? String ?? ""
                     self.answer = item["answer"] as? String ?? ""
-                
-                let getQuestion = GetQuestions(question: self.question ?? "", answer: self.answer ?? "", Q_id: 0)
-                self.getQuestionArr.append(getQuestion)
+                    
+                    let getQuestion = GetQuestions(question: self.question ?? "", answer: self.answer ?? "", Q_id: 0)
+                    self.getQuestionArr.append(getQuestion)
                 }
                 print(self.getQuestionArr.count)
-
+                
                 let ciggrate = data["cigarettes_info"] as? String
                 self.lblCigarette.text = ciggrate
                 let drugsInfo = data["drug_info"] as? String
@@ -137,7 +142,7 @@ class MyProfileVC: UIViewController {
                 
                 let userUploads = data["userUploads"] as! [Dictionary<String,Any>]
                 print(userUploads)
-                print(self.imageArr.count)
+                // print(self.imageArr.count)
                 print(response)
                 completion(true)
             }else{
@@ -145,9 +150,8 @@ class MyProfileVC: UIViewController {
             }
         }
     }
-
+    
     @IBAction func editUserEmailBtnWasPressed(_ sender: UIButton) {
-        
         
     }
     
@@ -156,36 +160,56 @@ class MyProfileVC: UIViewController {
         
     }
     
+    
 }
 
 
-extension MyProfileVC:UICollectionViewDelegate,UICollectionViewDataSource{
+extension MyProfileVC:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        selectImage = selectImageArr.count == 0 ?  1 : selectImageArr.count
+        return selectImage
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyProfileCell", for: indexPath) as? MyProfileCell else {
-           return UICollectionViewCell()
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyProfileCell", for: indexPath) as? MyProfileCell {
+            if selectImageArr.count == 0{
+                cell.addImageBtn.addTarget(self, action: #selector(openPhotoPickerView), for: .touchUpInside)
+                return cell
+            }else{
+                cell.profileImage.image = selectImageArr[indexPath.row]
+                cell.addImageBtn.addTarget(self, action: #selector(openPhotoPickerView), for: .touchUpInside)
+                return cell
+            }
         }
-        cell.profileImage.image = downloadImage
-        return cell
+        else{
+            return UICollectionViewCell()
+        }
+        
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           var numOfColumns : CGFloat = 2
-           if UIScreen.main.bounds.width > 320 {
-               numOfColumns = 3
-           }
-           let spaceBetweenCells : CGFloat = 15
-           let padding : CGFloat = 20
-           let cellDimension = ((collectionView.bounds.width - padding) - (numOfColumns - 1) * spaceBetweenCells) / numOfColumns
-           return CGSize(width: cellDimension, height: cellDimension)
-       }
+        var numOfColumns : CGFloat = 2
+        if UIScreen.main.bounds.width > 320 {
+            numOfColumns = 3
+        }
+        let spaceBetweenCells : CGFloat = 15
+        let padding : CGFloat = 20
+        let cellDimension = ((collectionView.bounds.width - padding) - (numOfColumns - 1) * spaceBetweenCells) / numOfColumns
+        return CGSize(width: cellDimension, height: cellDimension)
+    }
+    
+
+    @objc func openPhotoPickerView() {
+        let myImagePickerController = UIImagePickerController()
+        myImagePickerController.isEditing = true
+        myImagePickerController.delegate = self
+        myImagePickerController.sourceType = .photoLibrary
+        self.present(myImagePickerController, animated: true, completion: nil)
+    }
     
 }
-
-
 
 //MARK:Uitable view datasource and delegate method
 
@@ -201,6 +225,23 @@ extension MyProfileVC:UITableViewDelegate,UITableViewDataSource{
         cell.answerLbl.text = getQuestionArr[indexPath.row].answer
         return cell
     }
+}
+
+//MARK:Uiimage pickercontroller delegate method
+
+extension MyProfileVC:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImages = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            pickedImage = pickedImages
+            selectImageArr.append(pickedImage)
+            self.collectionView.reloadData()
+            dismiss(animated: true, completion: nil)
+        }
+        
+        func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            dismiss(animated: true, completion: nil)
+        }
+    }
     
 }

@@ -48,6 +48,13 @@ class UserModel{
         }
     }
     
+    
+    static var perosnalFeed:DatabaseReference{
+        get{
+            return Database.database().reference().child("user_posts")
+        }
+    }
+    
     var username : String = ""
     var bio : String = ""
     

@@ -33,7 +33,7 @@ class ProfileSetupBio_AnswerVC: UIViewController {
     
     
     //    MARK:Intial Setup of view controller
-    internal func initialSetup(){
+     func initialSetup(){
         tableView.delegate = self
         tableView.dataSource = self
         self.titleView.backBtn.addTarget(self, action: #selector(dismissView(_ :)), for: .touchUpInside)
@@ -60,10 +60,10 @@ class ProfileSetupBio_AnswerVC: UIViewController {
 
 extension ProfileSetupBio_AnswerVC:UITableViewDelegate,UITableViewDataSource{
     
-    internal func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return AuthServices.instance.getQuetionsArr.count
     }
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "AnswerCell", for: indexPath) as? AnswerCell {
             if AuthServices.instance.getQuetionsArr[indexPath.row].Q_id == 1{

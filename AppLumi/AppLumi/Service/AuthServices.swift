@@ -174,7 +174,7 @@ class AuthServices{
        
         
         do{
-             let json = try JSON(data: data)
+             //let json = try JSON(data: data)
             
             let eventDetail = try JSONDecoder().decode(EventDetail.self, from: data)
             print(eventDetail)
