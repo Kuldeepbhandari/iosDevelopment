@@ -14,9 +14,10 @@ class MenuVC: UIViewController {
     @IBOutlet weak var eventsView: RoundView!
     @IBOutlet weak var lumiDatesView: RoundView!
     @IBOutlet weak var mayBeMatchesView: RoundView!
-    
     @IBOutlet weak var invitesView: RoundView!
     @IBOutlet weak var settingView: RoundView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupIntialView()
@@ -27,6 +28,7 @@ class MenuVC: UIViewController {
     }
     
     private func setupIntialView(){
+        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openHomeMapView))
         eventsView.isUserInteractionEnabled = true
         eventsView.addGestureRecognizer(tapGesture)
@@ -44,6 +46,10 @@ class MenuVC: UIViewController {
         let inviteVcGesture = UITapGestureRecognizer(target: self, action: #selector(naivigateToInviteVC))
         invitesView.isUserInteractionEnabled = true
         invitesView.addGestureRecognizer(inviteVcGesture)
+        
+//        let maybeMatchVC = UITapGestureRecognizer(target: self, action: #selector(navigateToTheMaybeMatchVC))
+//        mayBeMatchesView.isUserInteractionEnabled = true
+//        mayBeMatchesView.addGestureRecognizer(maybeMatchVC)
         
     }
     
@@ -67,6 +73,13 @@ class MenuVC: UIViewController {
     @objc func openEventmateView(){
         guard let lumiDates = self.storyboard?.instantiateViewController(withIdentifier: "EventMatesVC") as? EventMatesVC else {return}
         self.navigationController?.pushViewController(lumiDates, animated: true)
+    }
+    
+//MARK:THis function is used to naviate to the maybeMatch viewcontroller
+    
+    @objc func navigateToTheMaybeMatchVC(){
+        guard let maybeMatchVC = self.storyboard?.instantiateViewController(withIdentifier: "MaybeMatchesVC") as? MaybeMatchesVC else {return}
+        self.navigationController?.pushViewController(maybeMatchVC, animated: true)
     }
 
 }

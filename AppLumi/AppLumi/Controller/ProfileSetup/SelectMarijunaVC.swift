@@ -67,7 +67,7 @@ class SelectMarijunaVC: UIViewController {
     @IBAction func nextBtnWasPressed(_ sender: UIButton) {
         
         if selectTitle != ""{
-            AuthServices.instance.updateDataOnServer(dict: ["alcohol_info":selectTitle], url: UPDATE_DRUGS_URL) { (sucees) in
+            AuthServices.instance.updateDataOnServer(dict: ["Marijuana":selectTitle], url: UPDATE_DRUGS_URL) { (sucees) in
                 if sucees{
                         guard let selectHeightVc = self.storyboard?.instantiateViewController(withIdentifier: "JobTititleVC") as? JobTititleVC else {return}
                         self.navigationController?.pushViewController(selectHeightVc, animated: true)

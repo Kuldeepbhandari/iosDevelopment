@@ -41,7 +41,7 @@ class SelectHeightVC: UIViewController {
         let body : [String:Any] = ["feet":selectFeet,
                     "inches":selectInch
         ]
-        AF.request(UPDATE_HEIGHT_URL, method: .put, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        AF.request(UPDATE_HEIGHT_URL, method: .put, parameters: body, encoding: JSONEncoding.default, headers: HEADER).response { (response) in
             if response.error == nil{
                 completion(true)
             }else{

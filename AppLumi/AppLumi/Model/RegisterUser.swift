@@ -16,8 +16,8 @@ struct RegisterUser{
 
 
 enum Gender:String{
-    case Male = "male"
-    case Female = "female"
-    case Others = "others"
+    case Male = "Male"
+    case Female = "Female"
+    case Others = "Non-Binary"
 }
 

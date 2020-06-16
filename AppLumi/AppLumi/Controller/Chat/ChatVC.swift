@@ -49,12 +49,6 @@ class ChatVC: UIViewController {
     }
     @IBAction func sendBtnTapped(_ sender: UIButton) {
         selectSenderUser(selectUser: ChooseUser.Sender)
-//        message = [ Message(userName: "kulddeep", content: self.messageTextField.text!, msgIncoming: true),
-//                                    Message(userName: "Gaurav", content: self.messageTextField.text!, msgIncoming: false),
-//                                    Message(userName: "Harit", content: self.messageTextField.text!, msgIncoming: true)
-//
-//        ]
-        //tableView.reloadData()
     }
     
     
@@ -78,13 +72,11 @@ class ChatVC: UIViewController {
         switch selectUser{
         case .Reciver:
             selectSender = ChooseUser(rawValue: selectUser.rawValue)
-            print(selectSender)
             guard let message = messageTextField.text , messageTextField.text != "" else {return}
             messageArr.append(message)
             tableView.reloadData()
         case .Sender:
             selectSender = ChooseUser(rawValue: selectUser.rawValue)
-            print(selectSender)
             guard let message = messageTextField.text , messageTextField.text != "" else {return}
             messageArr.append(message)
             tableView.reloadData()
@@ -104,43 +96,22 @@ extension ChatVC:UITableViewDataSource,UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let count = message!.isEmpty ? 0 : message?.count
-//        return count!
         return messageArr.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-//        switch selectSender {
-//        case .Sender:
         if indexPath.row % 2 == 0{
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReciverTableCell", for: indexPath) as? ReciverTableCell else {return UITableViewCell()}
             cell.reviverMessageLbl.text = messageArr[indexPath.row]
             return cell
         }else {
-        //case .Reciver:
              guard let cell = tableView.dequeueReusableCell(withIdentifier: "SenderTableCell", for: indexPath) as? SenderTableCell else {return UITableViewCell()}
              cell.textMsg.text = messageArr[indexPath.row]
                         return cell
     
-          //  return UITableViewCell()
         }
-//        let messages = message?[indexPath.row]
-//        let cellIdentifier = messages!.msgIncoming ? ReciverTableCell.self : SenderTableCell.self
-//        if message!.isEmpty{
-//            return UITableViewCell()
-//        }
-//        else if cellIdentifier == ReciverTableCell.self{
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ReciverTableCell", for: indexPath) as? ReciverTableCell else {return UITableViewCell()}
-//            cell.reviverMessageLbl.text = messages?.content
-//        return cell
-//        }else if cellIdentifier == SenderTableCell.self{
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SenderTableCell", for: indexPath) as? SenderTableCell else {return UITableViewCell()}
-//            cell.textMsg.text = messages?.content
-//            return cell
-//        }
-//        return UITableViewCell()
     }
 }
 

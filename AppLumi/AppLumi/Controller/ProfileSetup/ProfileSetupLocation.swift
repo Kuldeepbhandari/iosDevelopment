@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import Alamofire
 
-class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManagerDelegate {
+class ProfileSetupLocation: UIViewController,UISearchBarDelegate {
     
     @IBOutlet var searchText: UITextField!
     @IBOutlet var searchBarView: CustomView!
@@ -31,7 +31,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManag
         super.viewDidLoad()
         checkLocationManager()
         informationView.locationImage.image = #imageLiteral(resourceName: "icProfileSetupLocationActive")
-        locationManager.delegate = self
+       // locationManager.delegate = self
     }
     
     
@@ -58,9 +58,10 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManag
     }
     //    MARK:This function is used to setup location manager
     func setUpLocationManager(){
-     //   locationManager.delegate = self
+        locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-      //  locationManager.requestLocation()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
     }
     
     //    MARK:This function is used to check the status of is user access the location service or not
@@ -111,7 +112,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManag
     func checkLocationAuthorization(){
         switch CLLocationManager.authorizationStatus(){
         case .authorizedWhenInUse:
-            mapView.showsUserLocation = true
+           // mapView.showsUserLocation = true
             locationManager.requestLocation()
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
@@ -130,8 +131,7 @@ class ProfileSetupLocation: UIViewController,UISearchBarDelegate,CLLocationManag
             present(alertController, animated: true, completion: nil)
             break
         case .authorizedAlways:
-           // locationManager.requestLocation()
-            break
+            locationManager.requestLocation()
         @unknown default:
             print("Fatral Error")
         }
@@ -216,8 +216,26 @@ extension ProfileSetupLocation:MKMapViewDelegate{
         annotation.subtitle = "subtitle"
         self.mapView.addAnnotation(annotation)
     }
-    
-   
-    
-    
+}
+
+extension ProfileSetupLocation : CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+         print("error:: \(error.localizedDescription)")
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.requestLocation()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+
+        if locations.first != nil {
+            print("location:: (location)")
+        }
+
+    }
+
 }

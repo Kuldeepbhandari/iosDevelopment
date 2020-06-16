@@ -106,7 +106,7 @@ class AuthServices{
                                         "dob":dob,
                                         "gender":gender
             ]
-            AF.request(COMPLETE_PROFILE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).responseData { (response) in
+            AF.request(COMPLETE_PROFILE_URL, method: .post, parameters: body, encoding: JSONEncoding.default, headers: HEADER).response { (response) in
                 if response.error == nil{
                 print(response)
                 completion(true)
@@ -142,7 +142,7 @@ class AuthServices{
     }
 
     func updateDataOnServer(dict:[String:Any] , url:URLConvertible, completion:@escaping CompletionHandler){
-        AF.request(url, method: .put, parameters: dict, encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        AF.request(url, method: .put, parameters: dict, encoding: JSONEncoding.default, headers: HEADER).response { (response) in
             if response.error == nil{
                 print("Data is send")
                 completion(true)

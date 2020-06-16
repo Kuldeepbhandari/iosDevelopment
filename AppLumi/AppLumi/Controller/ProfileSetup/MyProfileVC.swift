@@ -141,6 +141,11 @@ class MyProfileVC: UIViewController {
                 self.lblUserName.text = userName
                 
                 let userUploads = data["userUploads"] as! [Dictionary<String,Any>]
+                
+//                for  key in userUploads{
+//                    let imageName = userUploads["path"] as? String ?? ""
+//
+//                }
                 print(userUploads)
                 // print(self.imageArr.count)
                 print(response)
@@ -159,8 +164,6 @@ class MyProfileVC: UIViewController {
         
         
     }
-    
-    
 }
 
 

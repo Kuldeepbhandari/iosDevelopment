@@ -51,7 +51,7 @@ extension HomeListVC:UITableViewDelegate,UITableViewDataSource{
         cell.biilLabel.text = "$ \(eventDetails[indexPath.row].price)"
         eventId = eventDetails[indexPath.row].id
         cell.resturantLoaction.text = eventDetails[indexPath.row].loc.name
-        cell.dateLbl.text = eventDetails[indexPath.row].eventDate.rawValue
+       // cell.dateLbl.text = eventDetails[indexPath.row].eventDate.rawValue
         return cell
     }
     

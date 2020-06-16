@@ -124,7 +124,13 @@ class GetSavedCardsVC: UIViewController {
     //    MARK:This function is used to save the card details in a from future transation
     
     func saveCardDetails(completion:@escaping CompletionHandler){
-        saveInfoBtn.setImage(#imageLiteral(resourceName: "icRadioActive"), for: .normal)
+        if flag == false{
+            saveInfoBtn.setImage(#imageLiteral(resourceName: "icRadioInactive"), for: .normal)
+            flag = true
+        }else if flag == true{
+            saveInfoBtn.setImage(#imageLiteral(resourceName: "icAddImg"), for: .normal)
+        }
+       // saveInfoBtn.setImage(#imageLiteral(resourceName: "icRadioActive"), for: .normal)
         guard let cardNo = cardNoTextField.text , cardNoTextField.text != "" else {return}
         guard let userName = userNameTextField.text , userNameTextField.text != "" else {return}
         guard let cvv = cvvTextF.text , cvvTextF.text != "" else {return}

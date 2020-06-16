@@ -179,6 +179,7 @@ extension ProfileSetupOverview:UICollectionViewDelegate,UICollectionViewDataSour
 
 
 extension ProfileSetupOverview:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let pickedImages = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             pickedImage = pickedImages
@@ -202,17 +203,23 @@ extension ProfileSetupOverview:UIImagePickerControllerDelegate,UINavigationContr
     
     
     func groupProfile(completion:@escaping CompletionHandler){
+     //   let url = try! URLRequest(url: URL(string: SAVE_IMAGE_ON_SERVER_URL)!, method: .post, headers: HEADER)
+
         AF.upload(multipartFormData: { multipartFormData in
-            
             if let jpegData = self.pickedImage.jpegData(compressionQuality: 1.0) {
-                    multipartFormData.append(jpegData, withName: "avatar", fileName: "avatar", mimeType: "image/jpeg")
+                let imageId:String = UUID().uuidString.lowercased().replacingOccurrences(of: "-", with: "_")
+                let imageName = "\(imageId).jpg"
+                    multipartFormData.append(jpegData, withName: "avatar", fileName: imageName, mimeType: "image/jpeg")
                 }
         }, to: SAVE_IMAGE_ON_SERVER_URL,method: .post, headers: HEADER)
-            .responseData { response in
+            .response { response in
                 if response.response?.statusCode == 200 {
                     print("OK. Done")
                 }
         }
-    
+
     }
+//
+
+
 }

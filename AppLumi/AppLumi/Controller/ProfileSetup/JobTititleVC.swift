@@ -81,7 +81,7 @@ class JobTititleVC: UIViewController ,UITextFieldDelegate{
     @IBAction func nextBtnWasPressed(_ sender: UIButton) {
         guard let title = selectJobTitle.text , selectJobTitle.text != "" else {return}
         let selectedTitle = title
-        AF.request(PUT_JOB_TITLE_URL, method: .put, parameters: ["jobTitle":selectedTitle], encoding: JSONEncoding.default, headers: HEADER).responseJSON { (response) in
+        AF.request(PUT_JOB_TITLE_URL, method: .put, parameters: ["jobTitle":selectedTitle], encoding: JSONEncoding.default, headers: HEADER).response{ (response) in
             if response.error == nil{
                     guard let selectAge = self.storyboard?.instantiateViewController(withIdentifier: "SelectHeightVC") as? SelectHeightVC else {return}
                     self.navigationController?.pushViewController(selectAge, animated: true)

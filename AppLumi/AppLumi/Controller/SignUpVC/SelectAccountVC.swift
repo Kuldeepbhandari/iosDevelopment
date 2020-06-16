@@ -30,24 +30,21 @@ class SelectAccountVC: UIViewController {
     
     //   MARK:This function is used to veify account a account is either exist or not .
     func verifyAccount(compeletion:@escaping CompletionHandler){
-        guard let mobileNo = mobileNo else {return}
+            guard let mobileNo = mobileNo else {return}
         print("\(mobileNo)")
         let url = "\(CHECK_EXISTING_ACCOUNT)\(mobileNo)"
         print(url)
         AF.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON {  (response) in
             if response.error == nil{
                 guard let data = response.data else {return}
-                print("Response value \(response.value)")
                 do{
                     guard let json = try JSON(data: data).dictionaryObject else {return}
-                    //  print(json)
                     for  (key,value) in json{
                         print("\(key) and \(value)")
                         self.message = json["message"] as? String ?? ""
                         
                     }
                     print("messega is \(self.message)")
-
                     compeletion(true)
                     
                 }catch{
@@ -79,16 +76,18 @@ class SelectAccountVC: UIViewController {
         alertControoler.addAction(okAction)
         self.present(alertControoler, animated: true, completion: nil)
     }
+    
     //    MARK:This function is used to create a new account
+    
     @IBAction func tappedOnCreateNewAccount(_ sender: UIButton) {
         verifyAccount { (sucess) in
             if sucess{
                 if  self.message == "user found!"{
-                                    self.existingAlertController()
-                                }else{
-                                    let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
-                                    self.navigationController?.pushViewController(profileOverviewVc, animated: true)
-                                }
+                    self.existingAlertController()
+                }else{
+                    let profileOverviewVc = self.storyboard?.instantiateViewController(withIdentifier: "ProfileSetupOverview") as! ProfileSetupOverview
+                    self.navigationController?.pushViewController(profileOverviewVc, animated: true)
+                }
             }
         }
     }
@@ -99,11 +98,11 @@ class SelectAccountVC: UIViewController {
         verifyAccount { (sucess) in
             if sucess{
                 if  self.message == "user found!"{
-                                    guard let settingVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC else {return}
-                                    self.navigationController?.pushViewController(settingVc, animated: true)
-                                }else{
-                                    self.createNewAccountAlertController()
-                                }
+                    guard let settingVc = self.storyboard?.instantiateViewController(withIdentifier: "MenuVC") as? MenuVC else {return}
+                    self.navigationController?.pushViewController(settingVc, animated: true)
+                }else{
+                    self.createNewAccountAlertController()
+                }
             }
         }
     }
