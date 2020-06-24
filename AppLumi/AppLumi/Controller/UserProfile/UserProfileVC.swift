@@ -2,7 +2,7 @@
 //  UserProfileVC.swift
 //  AppLumi
 //
-//  Created by mac on 02/05/20.
+//  Created by Kuldeep Singh on 02/05/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 

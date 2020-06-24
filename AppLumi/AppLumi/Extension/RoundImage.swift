@@ -2,7 +2,7 @@
 //  RoundImage.swift
 //  AppLumi
 //
-//  Created by appinventiv on 01/04/20.
+//  Created by Kuldeep Singh on 01/04/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 

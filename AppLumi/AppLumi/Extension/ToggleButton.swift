@@ -2,7 +2,7 @@
 //  ToggleButton.swift
 //  AppLumi
 //
-//  Created by appinventiv on 14/04/20.
+//  Created by Kuldeep Singh on 14/04/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 
@@ -13,11 +13,11 @@ class ToggleButton: UIButton {
     var isCheckd:Bool = false{
         didSet{
             if isCheckd == true{
-                print("Select isChecked \(isCheckd)")
+              //  print("Select isChecked \(isCheckd)")
                 layer.backgroundColor = AppColors.selectBtn.cgColor
                 self.setTitleColor(AppColors.selectTitleColor, for: .normal)
             }else{
-                print("Select Deselect \(isCheckd)")
+               // print("Select Deselect \(isCheckd)")
 
                 layer.backgroundColor = AppColors.defaultColor.cgColor
                 self.setTitleColor(AppColors.defaultTitleColor, for: .normal)

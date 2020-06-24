@@ -2,7 +2,7 @@
 //  InviteVC.swift
 //  AppLumi
 //
-//  Created by mac on 19/05/20.
+//  Created by Kuldeep Singh on 19/05/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  PaymentVC.swift
 //  AppLumi
 //
-//  Created by mac on 07/05/20.
+//  Created by Kuldeep Singh on 07/05/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 

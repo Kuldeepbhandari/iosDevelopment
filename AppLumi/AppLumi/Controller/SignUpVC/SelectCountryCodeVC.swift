@@ -2,7 +2,7 @@
 //  SelectCountryCodeVC.swift
 //  AppLumi
 //
-//  Created by appinventiv on 21/03/20.
+//  Created by Kuldeep Singh on 21/03/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 
@@ -96,7 +96,6 @@ extension SelectCountryCodeVC:UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        
         counrtyCode = searchedArray[indexPath.row].countryCode.rawValue
         countryImage = searchedArray[indexPath.row].flag.rawValue
         delegate?.passCountryCode(code: counrtyCode ?? "", image:UIImage(named: countryImage ?? "")!)

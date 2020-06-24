@@ -2,7 +2,7 @@
 //  EventDetailsVC.swift
 //  AppLumi
 //
-//  Created by appinventiv on 28/04/20.
+//  Created by Kuldeep Singh on 28/04/20.
 //  Copyright © 2020 appinventiv. All rights reserved.
 //
 
